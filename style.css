@@ -271,7 +271,7 @@
   .logo-item-3d:hover {
     background: rgba(74,222,128,0.07);
     border-color: rgba(74,222,128,0.3);
-    transform: translateY(-4px);
+    transform: translateY(1px);
   }
 
   .logo-text {
