@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ceative Kamrul</title>
+<meta content="Graphics & Ui Ux Designer" name="description">
+<meta content="creative Kamrul" name="Ui UX Designer Kamrul Hasan">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!--Links-->
+<link rel="stylesheet" href="contact.css">
+
+<!-- Favicons -->
+<link href="./assets/fav-icon/K.png" rel="icon">
+<link href="./assets/fav-icon/K.png" rel="apple-touch-icon">
+
+  
+</style>
+</head>
+<body>
+
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="./index.html">Home</a>
+  <a href="./works.html">Works</a>
+  <a href="./about me.html">About</a>
+  <a href="./blogs.html">Blogs</a>
+  <a href="#contact" class="active">Contact</a>
+</nav>
+
+
+<div class="wrapper">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="./index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <span class="breadcrumb-current">Contact</span>
+  </div>
+
+  <!-- HEADING -->
+  <div class="page-heading">
+    <div class="page-tag">Get In Touch</div>
+    <h1 class="page-title">Let's <em>Connect</em></h1>
+    <p class="page-subtitle">Pick a time that works for you, or reach out through any of the channels below. I typically respond within 12 hours.</p>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="contact-layout">
+
+    <!-- LEFT: Info -->
+    <div class="info-card">
+
+      <div class="info-avatar-row">
+        <!-- Replace emoji with your photo -->
+        <div class="info-avatar">🧑</div>
+        <div>
+          <div class="info-name">Md Kamrul Hasan</div>
+          <div class="info-role">UX Ui Designer</div>
+        </div>
+      </div>
+
+      <div class="info-status">
+        <div class="status-dot"></div>
+        Available for opportunities
+      </div>
+
+      <div class="info-divider"></div>
+
+      <div class="info-details">
+        <div class="info-row">
+          <div class="info-row-icon">📍</div>
+          Bangladesh, Dhaka (GMT+6)
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">📧</div>
+          <a href="mailto:hello@yourname.com">hello@creativekamrul.com</a>
+        </div>
+        <div class="info-row">
+          <div class="info-row-icon">⏱</div>
+          Typically replies within 12 hours
+        </div>
+      </div>
+
+      <div class="info-divider"></div>
+
+      <div>
+        <div class="social-title">Find me on</div>
+        <div class="social-grid">
+
+          <a href="https://linkedin.com/in/kamrul21042" target="_blank" class="social-btn">
+            <span class="s-icon">💼</span> LinkedIn
+            <span class="s-arrow">↗</span>
+          </a>
+
+          <a href="https://twitter.com/kamrul21042" target="_blank" class="social-btn">
+            <span class="s-icon">𝕏</span> Twitter/X
+            <span class="s-arrow">↗</span>
+          </a>
+
+          <a href="https://behance.net/kamrul21042" target="_blank" class="social-btn">
+            <span class="s-icon">🅱</span> Behance
+            <span class="s-arrow">↗</span>
+          </a>
+
+          <a href="https://dribbble.com/kamrul21042" target="_blank" class="social-btn">
+            <span class="s-icon">🏀</span> Dribbble
+            <span class="s-arrow">↗</span>
+          </a>
+
+          <a href="mailto:kamrului24x7@gmail.com" class="social-btn">
+            <span class="s-icon">📩</span> Email
+            <span class="s-arrow">↗</span>
+          </a>
+
+          <a href="https://wa.me/8801739703275" target="_blank" class="social-btn">
+            <span class="s-icon">💬</span> WhatsApp
+            <span class="s-arrow">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Booking Calendar -->
+    <div class="booking-card">
+
+      <div class="booking-header">
+        <h3>📅 Book a Call</h3>
+        <p>30-minute discovery or collaboration call — pick a date & time below</p>
+      </div>
+
+      <!-- Calendar -->
+      <div class="cal-nav">
+        <span class="cal-month" id="calMonth">March 2026</span>
+        <div class="cal-arrows">
+          <button class="cal-arrow-btn" id="prevMonth">‹</button>
+          <button class="cal-arrow-btn" id="nextMonth">›</button>
+        </div>
+      </div>
+
+      <div class="cal-grid-wrap">
+        <div class="cal-weekdays">
+          <span>SUN</span><span>MON</span><span>TUE</span>
+          <span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+        </div>
+        <div class="cal-days" id="calDays"></div>
+      </div>
+
+      <!-- Time Slots -->
+      <div class="slots-section" id="slotsSection" style="display:none">
+        <div class="slots-title" id="slotsTitle">Available times</div>
+        <div class="slots-grid" id="slotsGrid"></div>
+      </div>
+
+      <!-- Confirm -->
+      <div class="confirm-area" id="confirmArea">
+        <div class="confirm-summary" id="confirmSummary"></div>
+        <input type="text" class="confirm-name-input" id="confirmName" placeholder="Your name & email (e.g. Alex · alex@email.com)">
+        <button class="confirm-btn" id="confirmBtn">✦ Confirm Booking</button>
+      </div>
+
+      <!-- Success -->
+      <div class="booking-success" id="bookingSuccess">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">You're booked!</div>
+        <p class="success-sub" id="successMsg"></p>
+        <button class="confirm-btn" style="width:100%;margin-top:8px" onclick="resetBooking()">Book another slot</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESPONSE NOTE -->
+  <div class="response-note">
+    ✦ <span>Average response time: 12 hours</span> · All timezones welcome
+  </div>
+
+</div>
+
+<script>
+  // ── CALENDAR ──
+  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const TIMES = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
+  const BOOKED = [2, 5, 9]; // booked slot indices (0-based)
+
+  let today = new Date();
+  let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
+  let selectedDate = null;
+  let selectedSlot = null;
+
+  function renderCalendar() {
+    const year = viewDate.getFullYear();
+    const month = viewDate.getMonth();
+    document.getElementById('calMonth').textContent = `${MONTHS[month]} ${year}`;
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    const container = document.getElementById('calDays');
+    container.innerHTML = '';
+
+    // empty slots
+    for (let i = 0; i < firstDay; i++) {
+      const empty = document.createElement('div');
+      empty.className = 'cal-day empty';
+      container.appendChild(empty);
+    }
+
+    for (let d = 1; d <= daysInMonth; d++) {
+      const btn = document.createElement('div');
+      btn.className = 'cal-day';
+      btn.textContent = d;
+
+      const date = new Date(year, month, d);
+      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+      const isToday = date.toDateString() === today.toDateString();
+
+      if (isPast || isWeekend) {
+        btn.classList.add('disabled');
+      } else {
+        btn.classList.add('available');
+        if (isToday) btn.classList.add('today');
+        if (selectedDate && date.toDateString() === selectedDate.toDateString()) btn.classList.add('selected');
+
+        btn.addEventListener('click', () => {
+          selectedDate = date;
+          selectedSlot = null;
+          renderCalendar();
+          showSlots(date);
+        });
+      }
+
+      container.appendChild(btn);
+    }
+  }
+
+  function showSlots(date) {
+    const section = document.getElementById('slotsSection');
+    const grid = document.getElementById('slotsGrid');
+    const title = document.getElementById('slotsTitle');
+    section.style.display = 'block';
+    title.textContent = `Available times · ${date.toLocaleDateString('en-US', {weekday:'long', month:'short', day:'numeric'})}`;
+    grid.innerHTML = '';
+    document.getElementById('confirmArea').classList.remove('show');
+
+    TIMES.forEach((t, i) => {
+      const btn = document.createElement('div');
+      btn.className = 'slot';
+      btn.textContent = t;
+      if (BOOKED.includes(i)) {
+        btn.classList.add('booked');
+        btn.title = 'Already booked';
+      } else {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedSlot = t;
+          showConfirm(date, t);
+        });
+      }
+      grid.appendChild(btn);
+    });
+  }
+
+  function showConfirm(date, time) {
+    const area = document.getElementById('confirmArea');
+    const summary = document.getElementById('confirmSummary');
+    area.classList.add('show');
+    const dateStr = date.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+    summary.innerHTML = `<strong>📅 ${dateStr}</strong><br><strong>⏰ ${time}</strong> · 30 min discovery call<br><span style="color:var(--green);font-size:12px">✦ Calendar invite will be sent to your email</span>`;
+    area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  document.getElementById('confirmBtn').addEventListener('click', () => {
+    const name = document.getElementById('confirmName').value.trim();
+    if (!name) {
+      document.getElementById('confirmName').style.borderColor = 'rgba(239,68,68,0.5)';
+      document.getElementById('confirmName').placeholder = '⚠ Please enter your name & email';
+      return;
+    }
+    if (!selectedDate || !selectedSlot) return;
+
+    const dateStr = selectedDate.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
+    document.getElementById('successMsg').textContent = `Your call is confirmed for ${dateStr} at ${selectedSlot}. A calendar invite will be sent shortly — see you then! 🙌`;
+    document.getElementById('confirmArea').classList.remove('show');
+    document.getElementById('slotsSection').style.display = 'none';
+    document.getElementById('bookingSuccess').classList.add('show');
+  });
+
+  function resetBooking() {
+    selectedDate = null;
+    selectedSlot = null;
+    document.getElementById('bookingSuccess').classList.remove('show');
+    document.getElementById('slotsSection').style.display = 'none';
+    document.getElementById('confirmArea').classList.remove('show');
+    document.getElementById('confirmName').value = '';
+    renderCalendar();
+  }
+
+  document.getElementById('prevMonth').addEventListener('click', () => {
+    viewDate.setMonth(viewDate.getMonth() - 1);
+    renderCalendar();
+  });
+  document.getElementById('nextMonth').addEventListener('click', () => {
+    viewDate.setMonth(viewDate.getMonth() + 1);
+    renderCalendar();
+  });
+
+  renderCalendar();
+</script>
+</body>
+</html>
