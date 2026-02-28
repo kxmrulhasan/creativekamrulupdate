@@ -1535,4 +1535,92 @@
     transition: opacity .7s ease, transform .7s ease;
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+ 
+/* Fun ZOne */
+.game-btn{
+  position:fixed;
+  left:30px;
+  bottom:30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:60px;
+  height:60px;
+
+  background:linear-gradient(135deg,#1a3a2a,#2a5a3a);
+  color:white;
+  border-radius:16px;
+  box-shadow:0 2px 5px rgba(24,190,2,0.4);
+  transition:all .3s ease;
+  z-index:9999;
+}
+
+/* ICON */
+.btn-icon{
+  font-size:26px;
+}
+
+/* 🔥 Tooltip */
+.game-btn::after{
+  content:"Fun Zone";
+  position:absolute;
+  bottom:70px;          /* button এর ডান পাশে */
+  background:#1a3a2a;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  white-space:nowrap;
+
+  opacity:0;
+  transform:translateX(-5px);
+  transition:all .25s ease;
+  pointer-events:none;
+}
+
+/* Hover */
+.game-btn:hover::after{
+  opacity:1;
+  transform:translateX(0);
+}
+
+/* .game-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 5px 15px rgba(24,190,2,0.5);
+}
+
+.game-btn{
+  position:fixed;
+  left:30px;      /* 👈 Left side */
+  /* bottom:30px;    👈 Bottom */
   
+  /* display:inline-flex; */
+  /* align-items:center; */
+  /* gap:12px; */
+  /* padding:14px 20px; */
+  /* background:linear-gradient(135deg,#7c3aed,#a855f7); */
+  /* color:white; */
+  /* text-decoration:none; */
+  /* border-radius:16px; */
+  /* font-weight:600; */
+  /* box-shadow:0 10px 25px rgba(124,58,237,0.4); */
+  /* transition:all .3s ease; */
+  /* z-index:9999; */
+/* } */
+
+/* .game-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(124,58,237,0.6);
+} */
+
+/* .btn-icon{ */
+  /* display:flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  background:rgba(255,255,255,0.2);
+  border-radius:12px;
+  font-size:20px;
+} */

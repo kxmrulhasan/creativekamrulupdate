@@ -452,3 +452,52 @@
 
   .reveal { opacity:0; transform:translateY(36px); transition: opacity .7s ease, transform .7s ease; }
   .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* Fun ZOne */
+.game-btn{
+  position:fixed;
+  left:30px;
+  bottom:30px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:60px;
+  height:60px;
+
+  background:linear-gradient(135deg,#1a3a2a,#2a5a3a);
+  color:white;
+  border-radius:16px;
+  box-shadow:0 2px 5px rgba(24,190,2,0.4);
+  transition:all .3s ease;
+  z-index:9999;
+}
+
+/* ICON */
+.btn-icon{
+  font-size:26px;
+}
+
+/* 🔥 Tooltip */
+.game-btn::after{
+  content:"Fun Zone";
+  position:absolute;
+  bottom:70px;          /* button এর ডান পাশে */
+  background:#1a3a2a;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:14px;
+  white-space:nowrap;
+
+  opacity:0;
+  transform:translateX(-5px);
+  transition:all .25s ease;
+  pointer-events:none;
+}
+
+/* Hover */
+.game-btn:hover::after{
+  opacity:1;
+  transform:translateX(0);
+}

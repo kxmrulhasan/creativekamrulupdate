@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ceative Kamrul</title>
+<meta content="Graphics & Ui Ux Designer" name="description">
+<meta content="creative Kamrul" name="Ui UX Designer Kamrul Hasan">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_outward" />
+
+<!--Links-->
+<link rel="stylesheet" href="fun-zone.css">
+
+<!-- Favicons -->
+<link href="./assets/fav-icon/K.png" rel="icon">
+<link href="./assets/fav-icon/K.png" rel="apple-touch-icon">
+
+
+</head>
+<body>
+
+<nav>
+  <a href="./index.html">Home</a>
+  <a href="./works.html">Works</a>
+  <a href="./about.html">About</a>
+  <a href="./blogs.html">Blogs</a>
+  <a href="./contact.html">Contact</a>
+</nav>
+
+<div class="wrap">
+  <div class="bc">
+    <a href="index.html">Home</a>
+    <span style="opacity:.4">›</span>
+    <span style="color:var(--text);font-weight:500">Fun Zone</span>
+  </div>
+
+  <div class="page-tag">Fun Zone</div>
+  <h1 class="page-title">Play &amp; <em>Learn</em></h1>
+  <p class="page-sub">Test your typing, color sense, puzzle, design knowledge and Figma tool skills!</p>
+
+  <!-- ── 2 col ── -->
+  <div class="grid2">
+
+    <!-- GAME 1: TYPING -->
+    <div class="gcard">
+      <div class="gcard-head"><span class="g-icon">⌨️</span><div><div class="g-title">Typing Speed Test</div><div class="g-desc">30 seconds — how fast can you type?</div></div></div>
+      <div class="gbody">
+        <div class="srow">
+          <div class="sc"><span class="lbl">WPM</span><span class="val" id="t-wpm">0</span></div>
+          <div class="sc"><span class="lbl">Accuracy</span><span class="val" id="t-acc">—</span></div>
+          <div class="sc"><span class="lbl">Time</span><span class="val" id="t-time">30</span></div>
+        </div>
+        <div class="bar-wrap"><div class="bar" id="t-bar" style="width:100%"></div></div>
+        <div id="t-pass"><span style="color:var(--muted);font-size:13px">Press Start to begin…</span></div>
+        <textarea id="t-inp" rows="2" placeholder="Start typing here…" spellcheck="false" disabled></textarea>
+        <div style="display:flex;gap:8px">
+          <button class="btn btnP" onclick="tStart()">▶ Start</button>
+          <button class="btn btnO" onclick="tReset()">↺ Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME 2: COLOR -->
+    <div class="gcard">
+      <div class="gcard-head"><span class="g-icon">🎨</span><div><div class="g-title">Color Hex Guessing</div><div class="g-desc">Match the HEX code to the color swatch!</div></div></div>
+      <div class="gbody">
+        <div class="srow">
+          <div class="sc"><span class="lbl">Score</span><span class="val" id="c-score">0</span></div>
+          <div class="sc"><span class="lbl">Streak 🔥</span><span class="val" id="c-streak">0</span></div>
+          <div class="sc"><span class="lbl">Best</span><span class="val" id="c-best">0</span></div>
+        </div>
+        <div class="c-sw" id="c-sw"></div>
+        <div class="c-grid" id="c-grid"></div>
+        <div class="fb" id="c-fb"></div>
+      </div>
+    </div>
+
+    <!-- GAME 3: PUZZLE -->
+    <div class="gcard">
+      <div class="gcard-head"><span class="g-icon">🧩</span><div><div class="g-title">Sliding Puzzle</div><div class="g-desc">Arrange 1–8 in order. Tap adjacent tiles.</div></div></div>
+      <div class="gbody">
+        <div class="srow">
+          <div class="sc"><span class="lbl">Moves</span><span class="val" id="p-moves">0</span></div>
+          <div class="sc"><span class="lbl">Best</span><span class="val" id="p-best">—</span></div>
+        </div>
+        <div class="p-board" id="p-board"></div>
+        <div id="p-status" style="font-size:13px;text-align:center;min-height:20px;color:var(--muted)"></div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btnP" onclick="pShuffle()">🔀 Shuffle</button>
+          <button class="btn btnO" onclick="pReset()">↺ Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME 4: QUIZ -->
+    <div class="gcard">
+      <div class="gcard-head"><span class="g-icon">🎓</span><div><div class="g-title">Design Knowledge Quiz</div><div class="g-desc">10 UI/UX & design theory questions!</div></div></div>
+      <div class="gbody">
+        <div class="srow">
+          <div class="sc"><span class="lbl">Score</span><span class="val" id="q-score">0</span></div>
+          <div class="sc"><span class="lbl">Question</span><span class="val" id="q-num">1/10</span></div>
+        </div>
+        <div class="q-pb"><div class="q-pf" id="q-pf" style="width:10%"></div></div>
+        <div style="font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase" id="q-lbl">Question 1 of 10</div>
+        <div class="q-question" id="q-q"></div>
+        <div class="q-opts" id="q-opts"></div>
+        <div class="fb" id="q-fb"></div>
+        <div id="q-res" style="display:none;text-align:center"></div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btnP" id="q-next" onclick="qNext()" style="display:none">Next →</button>
+          <button class="btn btnO" id="q-again" onclick="qStart()" style="display:none">↺ Play Again</button>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end grid2 -->
+
+  <!-- GAME 5: FIGMA — full width -->
+  <div class="grid1">
+    <div class="gcard">
+      <div class="gcard-head"><span class="g-icon">🖊️</span><div><div class="g-title">Figma Tool Guesser</div><div class="g-desc">See the SVG icon — identify the Figma tool! 10 sec per question.</div></div></div>
+      <div class="gbody">
+        <div class="srow">
+          <div class="sc"><span class="lbl">Score</span><span class="val" id="f-score">0</span></div>
+          <div class="sc"><span class="lbl">Streak 🔥</span><span class="val" id="f-streak">0</span></div>
+          <div class="sc"><span class="lbl">Best</span><span class="val" id="f-best">0</span></div>
+          <div class="sc"><span class="lbl">Time</span><span class="val" id="f-time">10</span></div>
+        </div>
+        <div class="bar-wrap"><div class="bar" id="f-bar" style="width:100%"></div></div>
+
+        <!-- start -->
+        <div class="center" id="f-start">
+          <div style="font-size:48px">🖊️</div>
+          <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700">Ready to test your Figma knowledge?</div>
+          <p style="color:var(--muted);font-size:13px;max-width:340px;line-height:1.7">Real Figma tool icons will appear. Identify the tool before 10 seconds run out!</p>
+          <button class="btn btnP" onclick="fStart()">▶ Start Game</button>
+        </div>
+
+        <!-- game -->
+        <div id="f-game" style="display:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center">
+            <div class="fp">
+              <div class="ftb">
+                <div class="fdot" style="background:#ff5f57"></div>
+                <div class="fdot" style="background:#febc2e"></div>
+                <div class="fdot" style="background:#28c840"></div>
+                <span style="font-size:10px;color:#555;margin-left:8px;font-family:'JetBrains Mono',monospace">Figma</span>
+              </div>
+              <div class="fcanvas">
+                <div>
+                  <div class="ficon" id="f-wrap">
+                    <svg id="f-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="58" height="58"></svg>
+                  </div>
+                  <div class="fhint" id="f-hint"></div>
+                </div>
+              </div>
+              <div class="fsb">
+                <span style="color:#444;font-size:10px">W 32  H 32</span>
+                <span style="color:#444;font-size:10px" id="f-qnum">Q 1/10</span>
+              </div>
+            </div>
+            <div>
+              <div style="font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;font-weight:600">Which Figma tool is this?</div>
+              <div class="f-opts" id="f-opts"></div>
+            </div>
+          </div>
+          <div class="fb" id="f-fb" style="margin-top:10px"></div>
+        </div>
+
+        <!-- result -->
+        <div class="center" id="f-res" style="display:none">
+          <div style="font-size:46px" id="f-emoji">🎉</div>
+          <div class="big-score" id="f-rscore"></div>
+          <div style="font-size:14px;color:var(--muted)" id="f-rmsg"></div>
+          <div style="display:flex;gap:8px">
+            <button class="btn btnP" onclick="fStart()">▶ Play Again</button>
+            <button class="btn btnO" onclick="fReview()">📋 Review</button>
+          </div>
+        </div>
+
+        <!-- review -->
+        <div id="f-rev" style="display:none">
+          <div style="font-size:13px;font-weight:600;margin-bottom:10px">Your Answers</div>
+          <div id="f-rev-list" style="display:flex;flex-direction:column;gap:7px"></div>
+          <button class="btn btnO" style="margin-top:14px" onclick="fStart()">▶ Play Again</button>
+        </div>
+
+      </div>
+    </div>
+  </div><!-- end grid1 -->
+
+</div><!-- end wrap -->
+
+  <!-- BACK -->
+  <div class="back-to-home">
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </div>
+
+<script>
+/* ── helpers ── */
+var $ = function(id){ return document.getElementById(id); };
+function rHex(){ return '#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0').toUpperCase(); }
+function shuf(a){ return a.slice().sort(function(){return Math.random()-.5;}); }
+
+/* ══ TYPING ══ */
+var TP=['The best designers understand that design is not just about making things look pretty, but about solving real problems for real people.',
+'Good UX design is invisible. When users complete their tasks without noticing the interface, the designer has done their job well.',
+'White space is not empty space. It is a powerful design tool that gives content room to breathe and guides the user eye across the page.',
+'Typography is the backbone of design. A well chosen typeface communicates personality, emotion, and hierarchy without any images needed.',
+'Design systems are living documents. They evolve with the product and team, providing consistency while allowing for creative freedom.'];
+var tTmr=null,tOn=false,tLeft=30,tPass='';
+
+function tDraw(v){
+  v=v||'';
+  var h='';
+  for(var i=0;i<tPass.length;i++){
+    var c='tc';
+    if(i<v.length) c+=v[i]===tPass[i]?' ok':' bad';
+    else if(i===v.length) c+=' cur';
+    h+='<span class="'+c+'">'+tPass[i]+'</span>';
+  }
+  $('t-pass').innerHTML=h;
+}
+
+function tStart(){
+  tReset();
+  tPass=TP[Math.floor(Math.random()*TP.length)];
+  tDraw();
+  var inp=$('t-inp');
+  inp.disabled=false; inp.value=''; inp.focus(); tOn=false;
+  inp.oninput=function(){
+    if(!tOn){
+      tOn=true;
+      tTmr=setInterval(function(){
+        tLeft--;
+        $('t-time').textContent=tLeft;
+        $('t-bar').style.width=(tLeft/30*100)+'%';
+        $('t-bar').style.background=tLeft<8?'#f87171':tLeft<15?'#fbbf24':'var(--green)';
+        if(tLeft<=0){clearInterval(tTmr);tEnd();}
+      },1000);
+    }
+    var v=inp.value;
+    tDraw(v);
+    var ok=v.split('').filter(function(c,i){return c===tPass[i];}).length;
+    var elapsed=30-tLeft+1;
+    $('t-wpm').textContent=elapsed>0?Math.round((ok/5)/(elapsed/60)):0;
+    $('t-acc').textContent=v.length>0?Math.round(ok/v.length*100)+'%':'—';
+  };
+}
+
+function tEnd(){
+  $('t-inp').disabled=true;
+  var v=$('t-inp').value;
+  var ok=v.split('').filter(function(c,i){return c===tPass[i];}).length;
+  $('t-wpm').textContent=Math.round((ok/5)/(30/60));
+  $('t-acc').textContent=v.length>0?Math.round(ok/v.length*100)+'%':'0%';
+}
+
+function tReset(){
+  clearInterval(tTmr); tLeft=30; tOn=false;
+  $('t-wpm').textContent='0'; $('t-acc').textContent='—'; $('t-time').textContent='30';
+  $('t-bar').style.width='100%'; $('t-bar').style.background='var(--green)';
+  $('t-pass').innerHTML='<span style="color:var(--muted);font-size:13px">Press Start to begin…</span>';
+  var i=$('t-inp'); i.value=''; i.disabled=true; i.oninput=null;
+}
+tReset();
+
+/* ══ COLOR ══ */
+var cSc=0,cSt=0,cBe=0,cAns='';
+function cRound(){
+  cAns=rHex();
+  var opts=shuf([cAns,rHex(),rHex()]);
+  $('c-sw').style.background=cAns; $('c-sw').textContent=cAns;
+  $('c-fb').textContent='';
+  var g=$('c-grid'); g.innerHTML='';
+  opts.forEach(function(h){
+    var b=document.createElement('div');
+    b.className='c-opt'; b.textContent=h;
+    b.onclick=function(){cCheck(h,b);};
+    g.appendChild(b);
+  });
+}
+function cCheck(chosen,btn){
+  document.querySelectorAll('.c-opt').forEach(function(b){b.onclick=null;});
+  if(chosen===cAns){
+    btn.classList.add('ok'); cSc++; cSt++;
+    if(cSt>cBe) cBe=cSt;
+    $('c-fb').style.color='var(--green)'; $('c-fb').textContent='✓ Correct! 🎨';
+  } else {
+    btn.classList.add('bad'); cSt=0;
+    document.querySelectorAll('.c-opt').forEach(function(b){if(b.textContent===cAns) b.classList.add('ok');});
+    $('c-fb').style.color='#f87171'; $('c-fb').textContent='✗ Wrong! Was: '+cAns;
+  }
+  $('c-score').textContent=cSc; $('c-streak').textContent=cSt; $('c-best').textContent=cBe;
+  setTimeout(cRound,1200);
+}
+cRound();
+
+/* ══ PUZZLE ══ */
+var pTl=[1,2,3,4,5,6,7,8,0],pMv=0,pBK='pBest';
+function pBGet(){return localStorage.getItem(pBK)||'—';}
+function pBSet(v){var c=localStorage.getItem(pBK);if(!c||v<parseInt(c))localStorage.setItem(pBK,v);}
+function pDraw(){
+  var b=$('p-board'); b.innerHTML='';
+  var goal=[1,2,3,4,5,6,7,8,0];
+  pTl.forEach(function(v,i){
+    var t=document.createElement('div');
+    t.className='p-tile'+(v===0?' mt':'')+(v!==0&&v===goal[i]?' wn':'');
+    if(v!==0){t.textContent=v;(function(idx){t.onclick=function(){pMove(idx);};})(i);}
+    b.appendChild(t);
+  });
+  $('p-moves').textContent=pMv; $('p-best').textContent=pBGet();
+}
+function pMove(i){
+  var e=pTl.indexOf(0);
+  var r=Math.floor(i/3),c=i%3,er=Math.floor(e/3),ec=e%3;
+  if(!((r===er&&Math.abs(c-ec)===1)||(c===ec&&Math.abs(r-er)===1))) return;
+  var tmp=pTl[i]; pTl[i]=pTl[e]; pTl[e]=tmp;
+  pMv++; pDraw();
+  if(pTl.join('')==='123456780'){
+    pBSet(pMv);
+    $('p-status').style.color='var(--green)';
+    $('p-status').textContent='🎉 Solved in '+pMv+' moves!';
+  }
+}
+function pSolvable(a){var inv=0;for(var i=0;i<8;i++)for(var j=i+1;j<9;j++)if(a[j]&&a[i]&&a[i]>a[j])inv++;return inv%2===0;}
+function pShuffle(){
+  var a;
+  do{a=[1,2,3,4,5,6,7,8,0].sort(function(){return Math.random()-.5;});}
+  while(!pSolvable(a)||a.join('')==='123456780');
+  pTl=a; pMv=0; $('p-status').textContent=''; pDraw();
+}
+function pReset(){pTl=[1,2,3,4,5,6,7,8,0];pMv=0;$('p-status').textContent='';pDraw();}
+pDraw();
+
+/* ══ QUIZ ══ */
+var QD=[
+  {q:"What does 'kerning' refer to in typography?",o:["Line height between rows","Spacing between specific letter pairs","Font weight variation","Baseline alignment"],a:1,e:"Kerning adjusts space between specific character pairs for visual harmony."},
+  {q:"Which Gestalt principle groups nearby elements together?",o:["Similarity","Closure","Proximity","Continuity"],a:2,e:"Proximity — elements close to each other appear related perceptually."},
+  {q:"What is the golden ratio approximately equal to?",o:["1.414","1.618","2.718","3.142"],a:1,e:"The golden ratio φ ≈ 1.618, widely used in layout and composition."},
+  {q:"In UX, 'affordance' means:",o:["A design loading speed","A visual cue suggesting how to interact","The color contrast ratio","Number of user clicks"],a:1,e:"Affordance signals how an element should be used — e.g. a button looks pressable."},
+  {q:"Minimum contrast ratio for normal text per WCAG AA?",o:["2:1","3:1","4.5:1","7:1"],a:2,e:"WCAG AA requires 4.5:1 contrast for normal text to ensure readability."},
+  {q:"Which color model is used for screen displays?",o:["CMYK","Pantone","RGB","HSL only"],a:2,e:"RGB (Red, Green, Blue) is the additive model used for digital screens."},
+  {q:"The F-pattern in UX describes:",o:["A navigation layout","How users visually scan web content","A CSS grid technique","A user persona type"],a:1,e:"Eye-tracking shows users scan pages in an F-shape — top then down the left side."},
+  {q:"Visual hierarchy means:",o:["A team org chart","Using only color gradients","Arranging elements to guide attention by importance","A Figma plugin"],a:2,e:"Visual hierarchy uses size, color, contrast and position to direct attention."},
+  {q:"Responsive design primarily addresses:",o:["Load time optimization","Adapting layouts across screen sizes","Adding animations","Using dark mode"],a:1,e:"Responsive design ensures layouts adapt fluidly to different device widths."},
+  {q:"Nielsen heuristic Visibility of system status means:",o:["Prevent errors first","Always keep users informed via feedback","Give user full control","Be consistent always"],a:1,e:"Heuristic #1: Keep users informed about what is going on with appropriate feedback."}
+];
+var qIdx=0,qSc=0,qDone=false,qQ=[];
+
+function qStart(){
+  qIdx=0; qSc=0; qDone=false;
+  qQ=shuf(QD).slice(0,10);
+  $('q-score').textContent='0';
+  $('q-res').style.display='none';
+  $('q-next').style.display='none';
+  $('q-again').style.display='none';
+  qDraw();
+}
+
+function qDraw(){
+  var d=qQ[qIdx];
+  $('q-lbl').textContent='Question '+(qIdx+1)+' of '+qQ.length;
+  $('q-num').textContent=(qIdx+1)+'/'+qQ.length;
+  $('q-pf').style.width=((qIdx+1)/qQ.length*100)+'%';
+  $('q-q').textContent=d.q;
+  $('q-fb').textContent=''; $('q-next').style.display='none';
+  qDone=false;
+  var ot=$('q-opts'); ot.innerHTML='';
+  d.o.forEach(function(opt,i){
+    var b=document.createElement('div');
+    b.className='q-opt'; b.textContent=opt;
+    (function(idx,el){b.onclick=function(){qAns(idx,el);};})(i,b);
+    ot.appendChild(b);
+  });
+}
+
+function qAns(chosen,btn){
+  if(qDone) return;
+  qDone=true;
+  var d=qQ[qIdx];
+  document.querySelectorAll('.q-opt').forEach(function(b){b.setAttribute('disabled','true');b.onclick=null;});
+  if(chosen===d.a){
+    btn.classList.add('ok'); qSc++;
+    $('q-score').textContent=qSc;
+    $('q-fb').style.color='var(--green)'; $('q-fb').textContent='✓ '+d.e;
+  } else {
+    btn.classList.add('bad');
+    document.querySelectorAll('.q-opt')[d.a].classList.add('ok');
+    $('q-fb').style.color='#f87171'; $('q-fb').textContent='✗ '+d.e;
+  }
+  if(qIdx<qQ.length-1){
+    $('q-next').style.display='inline-flex';
+  } else {
+    setTimeout(qResult,900);
+  }
+}
+
+function qNext(){qIdx++;qDraw();}
+
+function qResult(){
+  $('q-opts').innerHTML=''; $('q-fb').textContent=''; $('q-next').style.display='none';
+  var pct=Math.round(qSc/qQ.length*100);
+  var msg=pct>=80?'🏆 Design Master!':pct>=60?'🎨 Solid Designer!':pct>=40?'📚 Keep Learning!':'🌱 Just Getting Started!';
+  var r=$('q-res'); r.style.display='block';
+  r.innerHTML='<div class="big-score">'+qSc+'/'+qQ.length+'</div><div style="color:var(--muted);font-size:14px;margin-top:6px">'+pct+'% · '+msg+'</div>';
+  $('q-again').style.display='inline-flex';
+}
+qStart();
+
+/* ══ FIGMA ══ */
+var FT=[
+  {n:'Move Tool',k:'V',h:'Select & move layers',w:['Scale Tool','Hand Tool','Frame Tool','Pen Tool'],
+   s:'<path d="M8 4L8 22L12 18L15 25L17 24L14 17L20 17Z" fill="#e8f5e9" stroke="rgba(74,222,128,.6)" stroke-width="1"/>'},
+  {n:'Frame Tool',k:'F',h:'Create frames / artboards',w:['Slice Tool','Rectangle Tool','Component Tool','Section Tool'],
+   s:'<rect x="6" y="6" width="20" height="20" rx="2" stroke="#4ade80" stroke-width="1.8" fill="none"/><line x1="6" y1="11" x2="26" y2="11" stroke="#4ade80" stroke-width="1.2" opacity=".5"/><line x1="11" y1="6" x2="11" y2="26" stroke="#4ade80" stroke-width="1.2" opacity=".5"/>'},
+  {n:'Pen Tool',k:'P',h:'Draw vector paths',w:['Pencil Tool','Brush Tool','Path Tool','Anchor Tool'],
+   s:'<path d="M8 24L14 12L20 18L26 6" stroke="#4ade80" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="14" cy="12" r="2.5" fill="#4ade80"/><circle cx="20" cy="18" r="2.5" fill="#4ade80"/><line x1="22" y1="22" x2="28" y2="28" stroke="#e8f5e9" stroke-width="2" stroke-linecap="round"/>'},
+  {n:'Text Tool',k:'T',h:'Add & edit text layers',w:['Font Tool','Label Tool','Heading Tool','Type Tool'],
+   s:'<text x="16" y="23" font-size="22" font-weight="900" text-anchor="middle" fill="#4ade80" font-family="serif">T</text><line x1="6" y1="27" x2="26" y2="27" stroke="rgba(74,222,128,.4)" stroke-width="1.5"/>'},
+  {n:'Rectangle Tool',k:'R',h:'Draw rectangles & squares',w:['Frame Tool','Shape Tool','Box Tool','Section Tool'],
+   s:'<rect x="7" y="9" width="18" height="14" rx="1.5" stroke="#4ade80" stroke-width="2" fill="rgba(74,222,128,.08)"/>'},
+  {n:'Ellipse Tool',k:'O',h:'Draw circles & ellipses',w:['Circle Tool','Oval Tool','Round Tool','Arc Tool'],
+   s:'<ellipse cx="16" cy="16" rx="11" ry="9" stroke="#4ade80" stroke-width="2" fill="rgba(74,222,128,.08)"/>'},
+  {n:'Hand Tool',k:'H',h:'Pan around the canvas',w:['Grab Tool','Pan Tool','Scroll Tool','Move Tool'],
+   s:'<path d="M12 22V12a2 2 0 0 1 4 0v4a2 2 0 0 1 4 0v2a2 2 0 0 1 4 0v2c0 3-2 5-5 5h-4c-2 0-3-1-3-3z" stroke="#4ade80" stroke-width="1.8" fill="rgba(74,222,128,.08)" stroke-linejoin="round"/>'},
+  {n:'Scale Tool',k:'K',h:'Scale objects proportionally',w:['Resize Tool','Transform Tool','Move Tool','Stretch Tool'],
+   s:'<path d="M8 8L24 8L24 24" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/><path d="M8 8L20 20" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>'},
+  {n:'Slice Tool',k:'S',h:'Export specific areas',w:['Crop Tool','Cut Tool','Export Tool','Frame Tool'],
+   s:'<rect x="7" y="7" width="18" height="18" rx="1" stroke="rgba(74,222,128,.3)" stroke-width="1.5" stroke-dasharray="3 2" fill="none"/><line x1="7" y1="16" x2="25" y2="16" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2"/><line x1="16" y1="7" x2="16" y2="25" stroke="#4ade80" stroke-width="1.8" stroke-dasharray="3 2"/>'},
+  {n:'Pencil Tool',k:'Shift+P',h:'Freehand drawing',w:['Pen Tool','Brush Tool','Draw Tool','Marker Tool'],
+   s:'<path d="M9 23L10 18L22 6L26 10L14 22Z" fill="rgba(74,222,128,.1)" stroke="#4ade80" stroke-width="1.8" stroke-linejoin="round"/><line x1="10" y1="18" x2="14" y2="22" stroke="#4ade80" stroke-width="1.5"/>'},
+  {n:'Zoom Tool',k:'Z',h:'Zoom in & out on canvas',w:['Magnify Tool','Scale Tool','Focus Tool','View Tool'],
+   s:'<circle cx="14" cy="14" r="8" stroke="#4ade80" stroke-width="2" fill="rgba(74,222,128,.06)"/><line x1="20" y1="20" x2="27" y2="27" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/><line x1="11" y1="14" x2="17" y2="14" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round"/><line x1="14" y1="11" x2="14" y2="17" stroke="#4ade80" stroke-width="1.8" stroke-linecap="round"/>'},
+  {n:'Comment Tool',k:'C',h:'Leave comments on designs',w:['Note Tool','Annotate Tool','Mark Tool','Tag Tool'],
+   s:'<path d="M6 8h20a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H10l-5 4V9a1 1 0 0 1 1-1z" stroke="#4ade80" stroke-width="1.8" fill="rgba(74,222,128,.08)" stroke-linejoin="round"/><circle cx="12" cy="14" r="1.5" fill="#4ade80"/><circle cx="16" cy="14" r="1.5" fill="#4ade80"/><circle cx="20" cy="14" r="1.5" fill="#4ade80"/>'}
+];
+
+var fSc=0,fSt=0,fBe=0,fQi=0,fDone=false,fTmr=null,fLeft=10,fSh=[],fHist=[];
+
+function fStart(){
+  fSc=0;fSt=0;fQi=0;fDone=false;fHist=[];
+  $('f-score').textContent='0';$('f-streak').textContent='0';
+  $('f-start').style.display='none';
+  $('f-res').style.display='none';
+  $('f-rev').style.display='none';
+  $('f-game').style.display='block';
+  fSh=shuf(FT).slice(0,10);
+  fDraw();
+}
+
+function fDraw(){
+  if(fQi>=fSh.length){fEnd();return;}
+  fDone=false;
+  var t=fSh[fQi];
+  $('f-svg').innerHTML=t.s;
+  $('f-hint').textContent=t.h;
+  $('f-fb').textContent='';
+  $('f-qnum').textContent='Q '+(fQi+1)+'/'+fSh.length;
+
+  var w=$('f-wrap');
+  w.style.animation='none'; w.offsetHeight; w.style.animation='pop .3s cubic-bezier(.34,1.56,.64,1) both';
+
+  var wrong=shuf(t.w).slice(0,3);
+  var opts=shuf([t.n].concat(wrong));
+  var keys=['A','B','C','D'];
+  var g=$('f-opts'); g.innerHTML='';
+  opts.forEach(function(opt,i){
+    var b=document.createElement('div');
+    b.className='f-opt';
+    b.innerHTML='<span class="fkey">'+keys[i]+'</span>'+opt;
+    (function(o,el){b.onclick=function(){fCheck(o,el,t);};})(opt,b);
+    g.appendChild(b);
+  });
+
+  clearInterval(fTmr);
+  fLeft=10; fTick();
+  fTmr=setInterval(function(){
+    fLeft--;fTick();
+    if(fLeft<=0){clearInterval(fTmr);if(!fDone)fTimeout(t);}
+  },1000);
+}
+
+function fTick(){
+  $('f-time').textContent=fLeft;
+  $('f-bar').style.width=(fLeft/10*100)+'%';
+  $('f-bar').style.background=fLeft<=3?'#f87171':fLeft<=5?'#fbbf24':'var(--green)';
+}
+
+function fCheck(chosen,btn,tool){
+  if(fDone) return;
+  fDone=true; clearInterval(fTmr);
+  document.querySelectorAll('.f-opt').forEach(function(b){b.classList.add('dis');b.onclick=null;});
+  if(chosen===tool.n){
+    btn.classList.add('ok'); fSc++;fSt++;
+    if(fSt>fBe) fBe=fSt;
+    $('f-fb').style.color='var(--green)';
+    $('f-fb').textContent='✓ Correct! Shortcut: '+tool.k;
+    fHist.push({t:tool,ok:true});
+  } else {
+    btn.classList.add('bad'); fSt=0;
+    document.querySelectorAll('.f-opt').forEach(function(b){if(b.textContent.trim().replace(/^[A-D]/,'').trim()===tool.n) b.classList.add('ok');});
+    $('f-fb').style.color='#f87171';
+    $('f-fb').textContent='✗ It was '+tool.n+' ('+tool.k+')';
+    fHist.push({t:tool,ok:false});
+  }
+  $('f-score').textContent=fSc;$('f-streak').textContent=fSt;$('f-best').textContent=fBe;
+  setTimeout(function(){fQi++;fDraw();},1100);
+}
+
+function fTimeout(tool){
+  fDone=true; fSt=0;
+  document.querySelectorAll('.f-opt').forEach(function(b){
+    b.classList.add('dis');b.onclick=null;
+    if(b.textContent.trim().replace(/^[A-D]/,'').trim()===tool.n) b.classList.add('ok');
+  });
+  $('f-fb').style.color='#fbbf24';
+  $('f-fb').textContent='⏰ Time\'s up! It was '+tool.n+' ('+tool.k+')';
+  $('f-streak').textContent=0;
+  fHist.push({t:tool,ok:false});
+  setTimeout(function(){fQi++;fDraw();},1200);
+}
+
+function fEnd(){
+  clearInterval(fTmr);
+  $('f-game').style.display='none';
+  $('f-res').style.display='flex';
+  var pct=Math.round(fSc/fSh.length*100);
+  var em=pct>=90?'🏆':pct>=70?'🎨':pct>=50?'📚':'🌱';
+  var msg=pct>=90?'Figma Legend!':pct>=70?'Great job! You know Figma well.':pct>=50?'Not bad! Keep practising.':'Time to open Figma and explore!';
+  $('f-emoji').textContent=em;
+  $('f-rscore').textContent=fSc+'/'+fSh.length;
+  $('f-rmsg').textContent=pct+'% correct · '+msg;
+}
+
+function fReview(){
+  $('f-res').style.display='none';
+  $('f-rev').style.display='block';
+  var l=$('f-rev-list'); l.innerHTML='';
+  fHist.forEach(function(h){
+    var d=document.createElement('div');
+    d.style.cssText='display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:10px;font-size:13px;background:'+(h.ok?'rgba(74,222,128,.07)':'rgba(248,113,113,.07)')+';border:1px solid '+(h.ok?'rgba(74,222,128,.2)':'rgba(248,113,113,.2)');
+    d.innerHTML='<span>'+(h.ok?'✓':'✗')+'</span><span style="flex:1;color:var(--text)">'+h.t.n+'</span><span style="color:var(--muted);font-family:monospace;font-size:11px">'+h.t.k+'</span>';
+    l.appendChild(d);
+  });
+}
+</script>
+</body>
+</html>
