@@ -260,7 +260,7 @@
   .blog-card-excerpt {
     font-size: 13px; color: var(--muted); line-height: 1.65;
     position: relative; z-index: 1;
-    display: -webkit-box; -webkit-line-clamp: 3;
+    /* display: -webkit-box; -webkit-line-clamp: 3; */
     -webkit-box-orient: vertical; overflow: hidden;
   }
 
