@@ -328,6 +328,7 @@
     display: flex; align-items: center; justify-content: center; gap: 10px;
     margin-top: 28px; font-size: 13px; color: var(--muted);
     opacity: 0; animation: fadeUp .6s .4s ease forwards;
+    margin-bottom: 20px; 
   }
   .response-note span { color: var(--green); }
 
@@ -384,3 +385,37 @@
   opacity:1;
   transform:translateX(0);
 }
+
+/* FORM CARD */
+.fcard{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;transition:border-color .3s}
+.fcard:focus-within{border-color:rgba(74,222,128,.18)}
+.fhead{margin-bottom:32px}
+.ftitle{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:700;margin-bottom:8px}
+.ftitle em{font-style:italic;color:var(--green)}
+.fsub{font-size:14px;color:var(--muted);line-height:1.6}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:580px){.fgrid{grid-template-columns:1fr}}
+.fg{display:flex;flex-direction:column;gap:7px}
+.fg.full{grid-column:1/-1}
+.flabel{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.finput,.fselect,.ftextarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;width:100%;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
+.finput::placeholder,.ftextarea::placeholder{color:rgba(127,184,154,.4)}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:rgba(74,222,128,.4);box-shadow:0 0 0 3px rgba(74,222,128,.06)}
+.finput.err,.fselect.err,.ftextarea.err{border-color:rgba(248,113,113,.5)}
+.fselect{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237fb89a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+.fselect option{background:#0f2018;color:var(--text)}
+.ftextarea{resize:vertical;min-height:130px;line-height:1.6}
+.fcc{font-size:11px;color:var(--muted);text-align:right}
+.ffooter{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:20px}
+.fnote{font-size:12px;color:var(--muted)}.fnote span{color:var(--green)}
+.fsubmit{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:var(--green);color:#0a1612;border:none;border-radius:999px;font-size:15px;font-weight:700;font-family:'DM Sans',sans-serif;cursor:pointer;transition:transform .2s,box-shadow .2s,opacity .2s}
+.fsubmit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(74,222,128,.3)}
+.fsubmit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.fsuccess{display:none;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:24px 0}
+.fsuccess.show{display:flex}
+.fsuccess-icon{font-size:52px}
+.fsuccess h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
+.fsuccess p{color:var(--muted);font-size:14px;max-width:320px;line-height:1.7}
+.fres-btn{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:13px;font-weight:600;color:var(--text);cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s,border-color .2s}
+.fres-btn:hover{background:rgba(255,255,255,.06)}
+

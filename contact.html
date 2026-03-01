@@ -34,6 +34,16 @@
       })();
       </script>
       <!--End of Tawk.to Script-->
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  var EMAILJS_PUBLIC_KEY  = '2dxTozIatsF9g-N0q';
+  var EMAILJS_SERVICE_ID  = 'service_wn5qsv6';
+  var EMAILJS_TEMPLATE_ID = 'template_fjow2yj';
+  var EMAILJS_FORM_TEMPLATE = 'My Default Template'; // separate template for contact form
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+</script>
       
 </head>
 <body>
@@ -203,6 +213,63 @@
   <!-- RESPONSE NOTE -->
   <div class="response-note">
     ✦ <span>Average response time: 12 hours</span> · All timezones welcome
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="fcard">
+
+    <div id="formWrap">
+      <div class="fhead">
+        <h2 class="ftitle">Drop me a <em>message</em></h2>
+        <p class="fsub">Have a project in mind? Fill the form and I'll get back to you within 12 hours.</p>
+      </div>
+
+      <div class="fgrid">
+        <div class="fg">
+          <label class="flabel" for="fn">Your Name *</label>
+          <input class="finput" type="text" id="fn" placeholder="Alex Johnson" autocomplete="name">
+        </div>
+        <div class="fg">
+          <label class="flabel" for="fe">Email Address *</label>
+          <input class="finput" type="email" id="fe" placeholder="alex@company.com" autocomplete="email">
+        </div>
+        <div class="fg">
+          <label class="flabel" for="fs">Subject *</label>
+          <input class="finput" type="text" id="fs" placeholder="Project Collaboration">
+        </div>
+        <div class="fg">
+          <label class="flabel" for="ft">Project Type</label>
+          <select class="fselect" id="ft">
+            <option value="">Select a type…</option>
+            <option>UX / UI Design</option>
+            <option>Brand Identity</option>
+            <option>Design System</option>
+            <option>Product Strategy</option>
+            <option>Freelance Collab</option>
+            <option>Just saying hi 👋</option>
+          </select>
+        </div>
+        <div class="fg full">
+          <label class="flabel" for="fm">Message *</label>
+          <textarea class="ftextarea" id="fm" placeholder="Tell me about your project, goals, timeline, or anything else you'd like to share…" maxlength="1000"></textarea>
+          <span class="fcc" id="fcc">0 / 1000</span>
+        </div>
+      </div>
+
+      <div class="ffooter">
+        <p class="fnote">* Required fields · <span>Reply within 12 hrs</span></p>
+        <button class="fsubmit" id="fsubmit" onclick="submitForm()">Send Message ✦</button>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div class="fsuccess" id="formSuccess">
+      <div class="fsuccess-icon">🎉</div>
+      <h3>Message Sent!</h3>
+      <p id="fSuccessMsg">Thanks for reaching out! I'll reply within 12 hours. Looking forward to connecting.</p>
+      <button class="fres-btn" onclick="resetForm()">↺ Send another message</button>
+    </div>
+
   </div>
 
 </div>
@@ -386,6 +453,57 @@
   });
 
   renderCalendar();
+
+  // ── CONTACT FORM ──
+document.getElementById('fm').addEventListener('input',function(){
+  document.getElementById('fcc').textContent=this.value.length+' / 1000';
+});
+
+function submitForm(){
+  var name=document.getElementById('fn').value.trim();
+  var email=document.getElementById('fe').value.trim();
+  var subject=document.getElementById('fs').value.trim();
+  var msg=document.getElementById('fm').value.trim();
+  var type=document.getElementById('ft').value;
+  var valid=true;
+
+  ['fn','fe','fs','fm'].forEach(function(id){document.getElementById(id).classList.remove('err');});
+
+  if(!name){document.getElementById('fn').classList.add('err');valid=false;}
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('fe').classList.add('err');valid=false;}
+  if(!subject){document.getElementById('fs').classList.add('err');valid=false;}
+  if(!msg){document.getElementById('fm').classList.add('err');valid=false;}
+  if(!valid)return;
+
+  var btn=document.getElementById('fsubmit');
+  btn.textContent='Sending…';btn.disabled=true;
+
+  emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_FORM_TEMPLATE,{
+    from_name:name,reply_to:email,
+    subject:subject,project_type:type||'Not specified',message:msg
+  }).then(function(){
+    document.getElementById('fSuccessMsg').textContent='Thanks '+name.split(' ')[0]+'! I got your message and will reply within 12 hours. Talk soon!';
+    document.getElementById('formWrap').style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+  }).catch(function(){
+    btn.textContent='Send Message ✦';btn.disabled=false;
+    alert('Something went wrong. Please email directly at hello@creativekamrul.com');
+  });
+}
+
+function resetForm(){
+  ['fn','fe','fs','fm'].forEach(function(id){
+    var el=document.getElementById(id);
+    el.value='';el.classList.remove('err');
+  });
+  document.getElementById('ft').value='';
+  document.getElementById('fcc').textContent='0 / 1000';
+  document.getElementById('fsubmit').textContent='Send Message ✦';
+  document.getElementById('fsubmit').disabled=false;
+  document.getElementById('formSuccess').classList.remove('show');
+  document.getElementById('formWrap').style.display='block';
+}
 </script>
+
 </body>
 </html>
