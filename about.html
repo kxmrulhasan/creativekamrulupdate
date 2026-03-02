@@ -37,217 +37,526 @@
 
 </head>
 <body>
- <!-- Fun Zone Button --> 
+<!-- Fun Zone Button --> 
 <a href="fun-zone.html" class="game-btn">
   <!-- <span class="btn-text">Fun zone</span> -->
   <span class="btn-icon">🎮</span>
 </a>
+
 <!-- NAV -->
 <nav>
   <a href="./index.html">Home</a>
   <a href="./works.html">Works</a>
-  <a href="#about" class="active">About</a>
+  <a href="./about.html" class="active">About</a>
   <a href="./blogs.html">Blogs</a>
-  <a href="#faq">Contact</a>
+  <a href="./contact.html" >Contact</a>
 </nav>
 
-
-<!-- ── HERO MONITOR ── -->
+<!-- ─── HERO ─── -->
 <section class="hero">
-  <div class="hero-glow"></div>
 
-  <div class="monitor-wrap reveal">
-    <div class="monitor">
-      <div class="monitor-screen">
-        <div class="monitor-avatar">🧑‍💻</div>
-        <div class="monitor-label">
-          <span>🖱</span> About Me
-        </div>
-        <div class="monitor-name-tag">William Watson</div>
-        <div class="monitor-cursor">↖</div>
+  <!-- Animated Sun SVG -->
+  <svg class="sun-wrap" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="39" cy="39" r="36" stroke="#4ade80" stroke-width="1.5" fill="rgba(74,222,128,0.07)"/>
+    <circle cx="39" cy="39" r="20" fill="rgba(74,222,128,0.13)" stroke="#4ade80" stroke-width="1.5"/>
+    <!-- 8 rays -->
+    <line x1="39" y1="3" x2="39" y2="13" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="39" y1="65" x2="39" y2="75" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="3"  y1="39" x2="13" y2="39" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="65" y1="39" x2="75" y2="39" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="12" y1="12" x2="19" y2="19" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="59" y1="59" x2="66" y2="66" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="66" y1="12" x2="59" y2="19" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="19" y1="59" x2="12" y2="66" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- face -->
+    <circle cx="33" cy="36" r="2.8" fill="#4ade80"/>
+    <circle cx="45" cy="36" r="2.8" fill="#4ade80"/>
+    <path d="M31 43 Q39 50 47 43" stroke="#4ade80" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <h1 class="hero-title reveal">The story of me being <span class="back-slash"></span></h1>
+
+  <p class="hero-sub reveal" style="transition-delay:.12s">
+   I create intuitive, visually engaging digital experiences across web and mobile platforms, turning complex ideas into simple, elegant solutions that users genuinely enjoy.
+  </p>
+
+  <!-- 3-photo polaroid stack -->
+  <div class="photo-stack reveal" style="transition-delay:.2s">
+    <div class="photo-card pc-l">
+      <div class="inner">
+         <img style="width: 100%;" src="./assets/img/4.jpg" alt="Kamrul Hasan">
       </div>
     </div>
-    <div class="monitor-stand-neck"></div>
-    <div class="monitor-stand-base" style="position:relative">
-      <div class="monitor-keyboard">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
+    <div class="photo-card pc-c">
+      <div class="inner">
+        <img style="width: 100%;" src="./assets/img/kamrul image 1.jpg" alt="Kamrul Hasan">
       </div>
-      <div class="monitor-mouse"></div>
+    </div>
+    <div class="photo-card pc-r">
+      <div class="inner">
+         <img style="width: 100%;" src="./assets/img/5.jpg" alt="Kamrul Hasan">
+      </div>
     </div>
   </div>
+
 </section>
 
-<!-- ── BIO STRIP ── -->
-<div class="bio-strip">
-  <div class="bio-icon">↗</div>
-  <div class="bio-text">
-    <p>This cool template is cooked up by <strong>Shashi</strong> and <strong>Sunal</strong>. Feel free to spill the beans about yourself in this zone — share your work wizardry, your fave hobbies, and whatever floats your boat right now. This space is all about letting your story shine, so go ahead and tell it like it's hot!</p>
-    <div class="bio-learning">
-      <div>
-        <div class="bio-learning-label"><span style="color:var(--green)">✦</span> Currently Learning</div>
-        <div class="bio-learning-desc">Diving deep into Framer to unleash the potential of bringing designs to life!</div>
-      </div>
-    </div>
+<!-- ─── TICKER ─── -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-word">EMPATHY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">ACCESSIBILITY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">DESIGN THINKING</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">EMPATHY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">ACCESSIBILITY</span><span class="ticker-dot">✦</span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-word">EMPATHY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">ACCESSIBILITY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">DESIGN THINKING</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">EMPATHY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">USER FRIENDLY</span><span class="ticker-dot">✦</span>
+    <span class="ticker-word">ACCESSIBILITY</span><span class="ticker-dot">✦</span>
   </div>
 </div>
 
-<!-- ── TICKER ── -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <span>ACCESSIBILITY</span><span class="tick-dot">✦</span>
-    <span>USER FRIENDLY</span><span class="tick-dot">✦</span>
-    <span>DESIGN THINKING</span><span class="tick-dot">✦</span>
-    <span>EMPATHY</span><span class="tick-dot">✦</span>
-    <span>USER FRIENDLY</span><span class="tick-dot">✦</span>
-    <span>ACCESSIBILITY</span><span class="tick-dot">✦</span>
-    <span>DESIGN THINKING</span><span class="tick-dot">✦</span>
-    <span>ACCESSIBILITY</span><span class="tick-dot">✦</span>
-    <span>USER FRIENDLY</span><span class="tick-dot">✦</span>
-    <span>DESIGN THINKING</span><span class="tick-dot">✦</span>
-    <span>EMPATHY</span><span class="tick-dot">✦</span>
-    <span>USER FRIENDLY</span><span class="tick-dot">✦</span>
-    <span>ACCESSIBILITY</span><span class="tick-dot">✦</span>
-    <span>DESIGN THINKING</span><span class="tick-dot">✦</span>
-  </div>
-</div>
+<!-- ─── BEYOND PORTFOLIO ─── -->
+<section class="beyond">
 
-<!-- ── BEYOND PORTFOLIO ── -->
-<section class="beyond-section">
   <div class="beyond-header reveal">
-    <div class="beyond-tag">Beyond Portfolio</div>
-    <h2 class="beyond-title">Let's know more<br>about</h2>
+    <div class="section-tag">Beyond Portfolio</div>
+    <h2 class="section-title">Let's know more<br>about me</h2>
   </div>
 
   <div class="bento">
 
-    <!-- Currently Reading -->
-    <div class="bento-card reveal">
-      <div class="bento-card-title"><span class="bento-spark">✦</span> Currently Reading</div>
-      <div class="bento-desc">Designed key features for embedding</div>
-      <div class="book-cover">
-        <div class="book-cover-title">The Psychology of Money</div>
-        <div class="book-cover-img">📖</div>
-        <div class="book-cover-sub">Morgan Housel</div>
+    <!-- Col 1: Book + Figma emoji stacked -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <!-- Current Read -->
+      <div class="bc reveal" style="transition-delay:.06s">
+        <div class="bc-label"><span class="spark">✦</span> Current Read</div>
+        <div class="bc-sub">The Psychology of Money · Morgan Housel</div>
+        <div style="display:flex;gap:12px;align-items:flex-end;margin-top:4px">
+          <div class="book-cover">
+            <div class="book-cover-title">The Psychology of Money</div>
+            <span class="book-cover-img">📖</span>
+            <div class="book-cover-author">Morgan Housel</div>
+          </div>
+          <div class="book-meta">
+            <strong>The Psychology of Money</strong>
+            <span>Morgan Housel</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Figma emoji -->
+      <div class="figma-bc reveal" style="transition-delay:.22s">
+        <div class="figma-emoji">🌟</div>
+      </div>
+
     </div>
 
-    <!-- Tech Stacks -->
-    <div class="bento-card reveal" style="transition-delay:.1s">
-      <div class="bento-card-title"><span class="bento-spark">✦</span> My Tech Stacks</div>
-      <div class="bento-desc">Designed key features for embedding in-platform data widgets, charts,</div>
-      <div class="tech-grid">
-        <div class="tech-item">🐙<span>GitHub</span></div>
-        <div class="tech-item">💬<span>Slack</span></div>
-        <div class="tech-item">🎮<span>Discord</span></div>
-        <div class="tech-item">🎨<span>Figma</span></div>
-        <div class="tech-item">📋<span>Notion</span></div>
-        <div class="tech-item">✉️<span>Gmail</span></div>
+    <!-- Col 2: Tech Stacks + Designers I Admire -->
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <!-- Tech Stacks -->
+      <div class="bc reveal" style="transition-delay:.1s">
+        <div class="bc-label"><span class="spark">✦</span> My Tech Stacks</div>
+        <div class="bc-sub">Designed key features for embedding in-platform data widgets, charts,</div>
+        <div class="tech-icons">
+          <div class="ti-item"><span class="ti-icon">📋</span><span class="ti-name">Notion</span></div>
+          <div class="ti-item"><span class="ti-icon">🚀</span><span class="ti-name">Framer</span></div>
+          <div class="ti-item"><span class="ti-icon">🎨</span><span class="ti-name">Figma</span></div>
+          <div class="ti-item"><span class="ti-icon">🔤</span><span class="ti-name">Webflow</span></div>
+        </div>
       </div>
+
+      <!-- Designers I Admire -->
+      <div class="bc reveal" style="transition-delay:.18s">
+        <div class="bc-label"><span class="spark">✦</span> Some designers I admire 🤩</div>
+        <div class="admire-faces">
+          <div class="af">👨‍🎨</div>
+          <div class="af">👩‍💻</div>
+          <div class="af">🧑‍🎨</div>
+          <div class="af">👨‍💼</div>
+          <div class="af">👩‍🎨</div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Map + Persona stacked -->
-    <div style="display:flex;flex-direction:column;gap:14px">
+    <!-- Col 3: Map + Persona stacked -->
+    <div style="display:flex;flex-direction:column;gap:12px">
 
       <!-- Map -->
-      <div class="bento-card reveal" style="transition-delay:.2s;padding:18px">
-        <div class="map-card">
-          <div class="map-grid"></div>
-          <div class="map-roads"></div>
-          <div class="map-pin">📍</div>
-          <div class="map-city">Bengaluru, India</div>
+      <div class="map-bc reveal" style="transition-delay:.14s">
+        <div class="map-grid-lines"></div>
+        <div class="map-diagonal"></div>
+        <div class="map-pin-wrap">
+          <div class="map-avatar">🧑</div>
+          <div class="map-pin-tail"></div>
         </div>
+        <div class="map-label">Berlin, Germany</div>
       </div>
 
       <!-- My Persona -->
-      <div class="bento-card reveal" style="transition-delay:.25s">
-        <div class="bento-card-title"><span class="bento-spark">✦</span> My Persona</div>
-        <div class="bento-desc">Designed key features for embedding</div>
+      <div class="bc reveal" style="transition-delay:.2s">
+        <div class="bc-label"><span class="spark">✦</span> My Persona</div>
+        <div class="bc-sub">Know me as a person</div>
         <div class="persona-chips">
-          <span class="persona-chip">Night-Owl 🦉</span>
-          <span class="persona-chip">Social-animal 🦁</span>
-          <span class="persona-chip">Traveller ✈️</span>
-          <span class="persona-chip">Night-Owl 🦉</span>
+          <span class="chip">Night-Owl 🦉</span>
+          <span class="chip">Social-animal 🦁</span>
+          <span class="chip">Traveller ✈️</span>
+          <span class="chip">Night-Owl 🦉</span>
         </div>
       </div>
-    </div>
 
-    <!-- Designers I admire (spans 2 cols) -->
-    <div class="bento-card reveal" style="grid-column: span 2; transition-delay:.3s">
-      <div class="bento-card-title"><span class="bento-spark">✦</span> Some designers</div>
-      <div class="admire-text" style="margin-bottom:12px">I <strong>admire</strong> 😍</div>
-      <div class="admire-avatars">
-        <div class="admire-avatar">👨‍🎨</div>
-        <div class="admire-avatar">👩‍💻</div>
-        <div class="admire-avatar">🧑‍🎨</div>
-        <div class="admire-avatar">👨‍💼</div>
-      </div>
     </div>
 
   </div>
 </section>
 
-<!-- ── EXPERIENCE ── -->
-<section class="experience-section">
+<!-- ─── EXPERIENCE ─── -->
+<section class="experience">
   <div class="exp-header reveal">
-    <div class="beyond-tag" style="justify-content:center;display:flex">My Experiences</div>
-    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;margin-top:10px">Where I've Been Employed</h2>
+    <div class="section-tag">My Experiences</div>
+    <h2 class="section-title">Where I've Been Employed</h2>
   </div>
 
   <div class="exp-list">
 
-    <div class="exp-item" style="animation-delay:.05s">
-      <div class="exp-left">
-        <div class="exp-role">Product Designer, <span class="exp-company">Smallcase</span></div>
-        <div class="exp-date">May · Aug 2023 / Bangalore, India</div>
+    <div class="exp-row reveal" style="transition-delay:.05s">
+      <div>
+        <div class="exp-role">Product Designer, <span class="exp-co">BetterPlace</span></div>
+        <div class="exp-date">May 2022 · Present / Bangalore, India</div>
       </div>
-      <div class="exp-right">
-        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to seamlessly navigate complex financial data.</p>
+      <div>
+        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to navigate seamlessly.</p>
       </div>
     </div>
 
-    <div class="exp-item" style="animation-delay:.1s">
-      <div class="exp-left">
-        <div class="exp-role">Product Designer, <span class="exp-company">Betterplace</span></div>
-        <div class="exp-date">May · Aug 2023 / Bangalore, India</div>
+    <div class="exp-row reveal" style="transition-delay:.1s">
+      <div>
+        <div class="exp-role">Product Designer, <span class="exp-co">Smallcase</span></div>
+        <div class="exp-date">May 2022 · Aug 2022 / Bangalore, India</div>
       </div>
-      <div class="exp-right">
-        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to navigate efficiently.</p>
+      <div>
+        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to navigate.</p>
         <div class="exp-collab">— collaborated with</div>
         <div class="exp-faces">
-          <div class="exp-face">🧑</div>
-          <div class="exp-face">👩</div>
-          <div class="exp-face">🧔</div>
-          <div class="exp-face">👨‍🦱</div>
+          <div class="expf">🧑</div>
+          <div class="expf">👩</div>
+          <div class="expf">🧔</div>
+          <div class="expf">👨‍🦱</div>
+          <div class="expf">👩‍🦰</div>
         </div>
       </div>
     </div>
 
-    <div class="exp-item" style="animation-delay:.15s">
-      <div class="exp-left">
-        <div class="exp-role">Product Design Intern, <span class="exp-company">Able Jobs</span></div>
-        <div class="exp-date">May · Aug 2023 / Bangalore, India</div>
+    <div class="exp-row reveal" style="transition-delay:.15s">
+      <div>
+        <div class="exp-role">Product Designer, <span class="exp-co">Toppr</span></div>
+        <div class="exp-date">May 2022 · Aug 2022 / Bangalore, India</div>
       </div>
-      <div class="exp-right">
-        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to seamlessly onboard.</p>
+      <div>
+        <p class="exp-desc">Designed key features for embedding in-platform data widgets, charts, and objects to generate technical reports. Designed interactions for users to onboard easily.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ── CTA BANNER ── -->
-<div class="cta-banner reveal">
+<!-- ─── EDUCATION ─── -->
+<section class="education">
+  <div class="reveal">
+    <div class="section-tag">Academic Background</div>
+    <h2 class="section-title">Education &<br><em style="font-style:italic;color:var(--green)">Qualifications</em></h2>
+  </div>
+
+  <div class="edu-grid">
+
+    <div class="edu-card reveal" style="transition-delay:.06s">
+      <span class="edu-year-badge">2020 — 2024</span>
+      <div class="edu-icon">🎓</div>
+      <div class="edu-degree">Bachelor of Science in Computer Science</div>
+      <div class="edu-school">University of Dhaka</div>
+      <div class="edu-field">Software Engineering · Human-Computer Interaction · Data Structures & Algorithms</div>
+      <div class="edu-footer">
+        <div class="edu-status"><div class="edu-dot green"></div>Completed</div>
+        <div class="edu-gpa">GPA <strong>3.72</strong> / 4.0</div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal" style="transition-delay:.1s">
+      <span class="edu-year-badge">2021 — Present</span>
+      <div class="edu-icon">🎨</div>
+      <div class="edu-degree">UI/UX Design — Self-Directed Learning</div>
+      <div class="edu-school">Google · Coursera · YouTube</div>
+      <div class="edu-field">User Research · Interaction Design · Visual Design · Design Systems · Figma</div>
+      <div class="edu-footer">
+        <div class="edu-status"><div class="edu-dot green"></div>Ongoing</div>
+        <div class="edu-gpa"><strong>4+</strong> yrs experience</div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal" style="transition-delay:.14s">
+      <span class="edu-year-badge">2018 — 2020</span>
+      <div class="edu-icon">📚</div>
+      <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+      <div class="edu-school">Dhaka City College</div>
+      <div class="edu-field">Science Group · Physics · Chemistry · Mathematics · Biology</div>
+      <div class="edu-footer">
+        <div class="edu-status"><div class="edu-dot blue"></div>Completed</div>
+        <div class="edu-gpa">GPA <strong>5.0</strong> / 5.0</div>
+      </div>
+    </div>
+
+    <div class="edu-card reveal" style="transition-delay:.18s">
+      <span class="edu-year-badge">2016 — 2018</span>
+      <div class="edu-icon">🏫</div>
+      <div class="edu-degree">Secondary School Certificate (SSC)</div>
+      <div class="edu-school">Motijheel Ideal School</div>
+      <div class="edu-field">Science Group · Foundation in Mathematics, Science & Bengali Literature</div>
+      <div class="edu-footer">
+        <div class="edu-status"><div class="edu-dot gold"></div>Completed</div>
+        <div class="edu-gpa">GPA <strong>5.0</strong> / 5.0</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CERTIFICATION CAROUSEL ─── -->
+<section class="cert-section">
+  <div class="cert-inner">
+    <div class="cert-header-row reveal">
+      <div>
+        <div class="section-tag">Credentials</div>
+        <h2 class="section-title">Licenses &<br><em style="font-style:italic;color:var(--green)">Certifications</em></h2>
+      </div>
+      <div class="cert-nav-btns">
+        <div class="cert-nav-btn" id="certPrev">‹</div>
+        <div class="cert-nav-btn" id="certNext">›</div>
+      </div>
+    </div>
+
+    <div class="cert-track-wrap reveal" style="transition-delay:.1s">
+      <div class="cert-track" id="certTrack">
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">🇬</div>
+            <div>
+              <div class="cert-issuer-name">Google</div>
+              <div class="cert-issuer-year">2023</div>
+            </div>
+          </div>
+          <div class="cert-name">Google UX Design Professional Certificate</div>
+          <div class="cert-skills">
+            <span class="cert-skill">UX Research</span>
+            <span class="cert-skill">Wireframing</span>
+            <span class="cert-skill">Prototyping</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">🎯</div>
+            <div>
+              <div class="cert-issuer-name">Meta</div>
+              <div class="cert-issuer-year">2023</div>
+            </div>
+          </div>
+          <div class="cert-name">Meta Front-End Developer Professional</div>
+          <div class="cert-skills">
+            <span class="cert-skill">HTML/CSS</span>
+            <span class="cert-skill">React</span>
+            <span class="cert-skill">JavaScript</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">🎨</div>
+            <div>
+              <div class="cert-issuer-name">Figma</div>
+              <div class="cert-issuer-year">2022</div>
+            </div>
+          </div>
+          <div class="cert-name">Figma Advanced Design Systems & Components</div>
+          <div class="cert-skills">
+            <span class="cert-skill">Design Tokens</span>
+            <span class="cert-skill">Auto Layout</span>
+            <span class="cert-skill">Variables</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">🏅</div>
+            <div>
+              <div class="cert-issuer-name">Coursera</div>
+              <div class="cert-issuer-year">2022</div>
+            </div>
+          </div>
+          <div class="cert-name">Interaction Design Specialization — UC San Diego</div>
+          <div class="cert-skills">
+            <span class="cert-skill">Cognitive Psychology</span>
+            <span class="cert-skill">Usability</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">🟠</div>
+            <div>
+              <div class="cert-issuer-name">Adobe</div>
+              <div class="cert-issuer-year">2021</div>
+            </div>
+          </div>
+          <div class="cert-name">Adobe Certified Professional — Visual Design</div>
+          <div class="cert-skills">
+            <span class="cert-skill">Photoshop</span>
+            <span class="cert-skill">Illustrator</span>
+            <span class="cert-skill">XD</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-issuer-row">
+            <div class="cert-issuer-logo">⚡</div>
+            <div>
+              <div class="cert-issuer-name">AWS</div>
+              <div class="cert-issuer-year">2024</div>
+            </div>
+          </div>
+          <div class="cert-name">AWS Certified Cloud Practitioner</div>
+          <div class="cert-skills">
+            <span class="cert-skill">Cloud</span>
+            <span class="cert-skill">S3</span>
+            <span class="cert-skill">Deployment</span>
+          </div>
+          <a href="#" class="cert-link">View Certificate</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cert-dots" id="certDots"></div>
+  </div>
+</section>
+
+<!-- ─── WORK PROCESS ─── -->
+<section class="process-section">
+  <div class="reveal">
+    <div class="section-tag">How I Work</div>
+    <h2 class="section-title">My Design<br><em style="font-style:italic;color:var(--green)">Process</em></h2>
+  </div>
+
+  <div class="process-grid">
+
+    <div class="process-card reveal" style="transition-delay:.05s">
+      <div class="process-step-num">01</div>
+      <div class="process-icon-wrap">🔍</div>
+      <div class="process-num">STEP 01</div>
+      <div class="process-title">Discover & Research</div>
+      <div class="process-desc">I start by deeply understanding the problem space — talking to users, studying competitors, and mapping business goals to uncover real insights.</div>
+      <div class="process-tags">
+        <span class="process-tag">User Interviews</span>
+        <span class="process-tag">Competitor Analysis</span>
+        <span class="process-tag">Empathy Maps</span>
+      </div>
+    </div>
+
+    <div class="process-card reveal" style="transition-delay:.1s">
+      <div class="process-step-num">02</div>
+      <div class="process-icon-wrap">💡</div>
+      <div class="process-num">STEP 02</div>
+      <div class="process-title">Define & Ideate</div>
+      <div class="process-desc">Turning raw research into clear problem statements, then rapidly generating ideas through sketching, brainstorming, and collaborative workshops.</div>
+      <div class="process-tags">
+        <span class="process-tag">How Might We</span>
+        <span class="process-tag">User Stories</span>
+        <span class="process-tag">Sketching</span>
+      </div>
+    </div>
+
+    <div class="process-card reveal" style="transition-delay:.15s">
+      <div class="process-step-num">03</div>
+      <div class="process-icon-wrap">📐</div>
+      <div class="process-num">STEP 03</div>
+      <div class="process-title">Wireframe & Structure</div>
+      <div class="process-desc">Building low-fidelity wireframes to explore layout, hierarchy, and flows — fast and iterative before committing to visual details.</div>
+      <div class="process-tags">
+        <span class="process-tag">Lo-fi Wireframes</span>
+        <span class="process-tag">Information Architecture</span>
+      </div>
+    </div>
+
+    <div class="process-card reveal" style="transition-delay:.2s">
+      <div class="process-step-num">04</div>
+      <div class="process-icon-wrap">🎨</div>
+      <div class="process-num">STEP 04</div>
+      <div class="process-title">Design & Prototype</div>
+      <div class="process-desc">Crafting high-fidelity UI with meticulous attention to typography, spacing, and interactions — then building clickable prototypes to bring it to life.</div>
+      <div class="process-tags">
+        <span class="process-tag">Hi-fi Design</span>
+        <span class="process-tag">Design System</span>
+        <span class="process-tag">Figma</span>
+      </div>
+    </div>
+
+    <div class="process-card reveal" style="transition-delay:.25s">
+      <div class="process-step-num">05</div>
+      <div class="process-icon-wrap">🧪</div>
+      <div class="process-num">STEP 05</div>
+      <div class="process-title">Test & Validate</div>
+      <div class="process-desc">Running usability tests with real users, collecting feedback, and iterating rapidly until the design feels intuitive and frictionless.</div>
+      <div class="process-tags">
+        <span class="process-tag">Usability Testing</span>
+        <span class="process-tag">A/B Testing</span>
+        <span class="process-tag">Heatmaps</span>
+      </div>
+    </div>
+
+    <div class="process-card reveal" style="transition-delay:.3s">
+      <div class="process-step-num">06</div>
+      <div class="process-icon-wrap">🚀</div>
+      <div class="process-num">STEP 06</div>
+      <div class="process-title">Deliver & Iterate</div>
+      <div class="process-desc">Handing off polished assets with developer specs, then monitoring post-launch metrics and continuously improving based on real-world data.</div>
+      <div class="process-tags">
+        <span class="process-tag">Dev Handoff</span>
+        <span class="process-tag">Zeplin / Inspect</span>
+        <span class="process-tag">Analytics</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CTA BANNER ─── -->
+<div class="cta-wrap reveal">
   <div class="cta-inner">
-    <div class="cta-text">
+    <div>
       <h3>Let's Connect and Create Something Amazing!</h3>
       <p>Reach out to me for collaborations, inquiries, or just to say hello.</p>
     </div>
-    <a href="portfolio.html#faq" class="cta-btn">Contact me →</a>
+    <a href="contact.html" class="cta-btn">Contact Me →</a>
   </div>
 </div>
 
+<!-- ─── FOOTER ─── -->
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
@@ -271,7 +580,7 @@
       <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance </a>
       <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble </a>
       <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium </a>
-
+      
     </div>
 
     <div class="footer-col footer-newsletter">
@@ -298,11 +607,58 @@
 </footer>
 
 <script>
-  // Scroll reveal
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+
+/* ── CERTIFICATION CAROUSEL ── */
+var track = document.getElementById('certTrack');
+var dotsWrap = document.getElementById('certDots');
+var cards = track ? track.querySelectorAll('.cert-card') : [];
+var cardW = 296; // 280px card + 16px gap
+var perPage = 3;
+var current = 0;
+var total = cards.length;
+var pages = Math.ceil(total / perPage);
+
+function buildDots() {
+  dotsWrap.innerHTML = '';
+  for (var i = 0; i < pages; i++) {
+    (function(idx) {
+      var d = document.createElement('div');
+      d.className = 'cert-dot' + (idx === 0 ? ' active' : '');
+      d.onclick = function() { goTo(idx); };
+      dotsWrap.appendChild(d);
+    })(i);
+  }
+}
+
+function goTo(page) {
+  current = Math.max(0, Math.min(page, pages - 1));
+  track.style.transform = 'translateX(-' + (current * perPage * cardW) + 'px)';
+  dotsWrap.querySelectorAll('.cert-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === current);
+  });
+}
+
+function updatePerPage() {
+  var w = window.innerWidth;
+  perPage = w < 540 ? 1 : w < 860 ? 2 : 3;
+  pages = Math.ceil(total / perPage);
+  current = 0;
+  buildDots();
+  goTo(0);
+}
+
+if (track) {
+  document.getElementById('certPrev').onclick = function() { goTo(current - 1); };
+  document.getElementById('certNext').onclick = function() { goTo(current + 1); };
+  updatePerPage();
+  window.addEventListener('resize', updatePerPage);
+}
 </script>
 </body>
 </html>
