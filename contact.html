@@ -4,173 +4,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ceative Kamrul</title>
 <meta content="Graphics & Ui Ux Designer" name="description">
 <meta content="creative Kamrul" name="Ui UX Designer Kamrul Hasan">
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!--Links-->
 <link rel="stylesheet" href="contact.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- Favicons -->
 <link href="./assets/fav-icon/K.png" rel="icon">
 <link href="./assets/fav-icon/K.png" rel="apple-touch-icon">
 
- <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/67c7f20a02283919190169e9/1ilkqlqkn';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
-      </script>
-      <!--End of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;s1.src='https://embed.tawk.to/67c7f20a02283919190169e9/1ilkqlqkn';
+  s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);
+  })();
+</script>
 
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-  var EMAILJS_PUBLIC_KEY  = '2dxTozIatsF9g-N0q';
-  var EMAILJS_SERVICE_ID  = 'service_wn5qsv6';
-  var EMAILJS_TEMPLATE_ID = 'template_fjow2yj';
-  var EMAILJS_FORM_TEMPLATE = 'My Default Template'; // separate template for contact form
+  var EMAILJS_PUBLIC_KEY    = '2dxTozIatsF9g-N0q';
+  var EMAILJS_SERVICE_ID    = 'service_wb82cxi';
+  var EMAILJS_BOOK_TEMPLATE = 'template_dg7c8at';   // Booking এর template
+  var EMAILJS_FORM_TEMPLATE = 'template_h1seh7l'; // ← নতুন template ID এখানে বসান
   emailjs.init(EMAILJS_PUBLIC_KEY);
 </script>
-      
 </head>
+
 <body>
 
-<!-- Fun Zone Button --> 
-<a href="fun-zone.html" class="game-btn">
-  <!-- <span class="btn-text">Fun zone</span> -->
-  <span class="btn-icon">🎮</span>
-</a>
-
-
+<a href="fun-zone.html" class="game-btn"><span class="btn-icon">🎮</span></a>
 <div class="bg-blob blob-1"></div>
 <div class="bg-blob blob-2"></div>
 
-<!-- NAV -->
 <nav>
   <a href="./index.html">Home</a>
   <a href="./works.html">Works</a>
   <a href="./about.html">About</a>
   <a href="./blogs.html">Blogs</a>
-  <a href="#contact" class="active">Contact</a>
+  <a href="./contact.html" class="active">Contact</a>
 </nav>
-
 
 <div class="wrapper">
 
-  <!-- BREADCRUMB -->
   <div class="breadcrumb">
     <a href="./index.html">Home</a>
     <span class="breadcrumb-sep">›</span>
     <span class="breadcrumb-current">Contact</span>
   </div>
 
-  <!-- HEADING -->
   <div class="page-heading">
     <div class="page-tag">Get In Touch</div>
     <h1 class="page-title">Let's <em>Connect</em></h1>
     <p class="page-subtitle">Pick a time that works for you, or reach out through any of the channels below. I typically respond within 12 hours.</p>
   </div>
 
-  <!-- MAIN LAYOUT -->
   <div class="contact-layout">
 
     <!-- LEFT: Info -->
     <div class="info-card">
-
       <div class="info-avatar-row">
-        <!-- Replace emoji with your photo -->
         <div class="info-avatar">🧑</div>
         <div>
           <div class="info-name">Md Kamrul Hasan</div>
           <div class="info-role">UX Ui Designer</div>
         </div>
       </div>
-
-      <div class="info-status">
-        <div class="status-dot"></div>
-        Available for opportunities
-      </div>
-
+      <div class="info-status"><div class="status-dot"></div>Available for opportunities</div>
       <div class="info-divider"></div>
-
       <div class="info-details">
-        <div class="info-row">
-          <div class="info-row-icon">📍</div>
-          Bangladesh, Dhaka (GMT+6)
-        </div>
-        <div class="info-row">
-          <div class="info-row-icon">📧</div>
-          <a href="mailto:hello@yourname.com">hello@creativekamrul.com</a>
-        </div>
-        <div class="info-row">
-          <div class="info-row-icon">⏱</div>
-          Typically replies within 12 hours
-        </div>
+        <div class="info-row"><div class="info-row-icon">📍</div>Bangladesh, Dhaka (GMT+6)</div>
+        <div class="info-row"><div class="info-row-icon">📧</div><a href="mailto:hello@creativekamrul.com">hello@creativekamrul.com</a></div>
+        <div class="info-row"><div class="info-row-icon">⏱</div>Typically replies within 12 hours</div>
       </div>
-
       <div class="info-divider"></div>
-
       <div>
         <div class="social-title">Find me on</div>
         <div class="social-grid">
-
-          <a href="https://linkedin.com/in/kamrul21042" target="_blank" class="social-btn">
-            <span class="s-icon">💼</span> LinkedIn
-            <span class="s-arrow">↗</span>
-          </a>
-
-          <a href="https://twitter.com/kamrul21042" target="_blank" class="social-btn">
-            <span class="s-icon">𝕏</span> Twitter/X
-            <span class="s-arrow">↗</span>
-          </a>
-
-          <a href="https://behance.net/kamrul21042" target="_blank" class="social-btn">
-            <span class="s-icon">🅱</span> Behance
-            <span class="s-arrow">↗</span>
-          </a>
-
-          <a href="https://dribbble.com/kamrul21042" target="_blank" class="social-btn">
-            <span class="s-icon">🏀</span> Dribbble
-            <span class="s-arrow">↗</span>
-          </a>
-
-          <a href="mailto:kamrului24x7@gmail.com" class="social-btn">
-            <span class="s-icon">📩</span> Email
-            <span class="s-arrow">↗</span>
-          </a>
-
-          <a href="https://wa.me/8801739703275" target="_blank" class="social-btn">
-            <span class="s-icon">💬</span> WhatsApp
-            <span class="s-arrow">↗</span>
-          </a>
-
+          <a href="https://linkedin.com/in/kamrul21042" target="_blank" class="social-btn"><span class="s-icon">💼</span> LinkedIn <span class="s-arrow">↗</span></a>
+          <a href="https://twitter.com/kamrul21042" target="_blank" class="social-btn"><span class="s-icon">𝕏</span> Twitter/X <span class="s-arrow">↗</span></a>
+          <a href="https://behance.net/kamrul21042" target="_blank" class="social-btn"><span class="s-icon">🅱</span> Behance <span class="s-arrow">↗</span></a>
+          <a href="https://dribbble.com/kamrul21042" target="_blank" class="social-btn"><span class="s-icon">🏀</span> Dribbble <span class="s-arrow">↗</span></a>
+          <a href="mailto:kamrului24x7@gmail.com" class="social-btn"><span class="s-icon">📩</span> Email <span class="s-arrow">↗</span></a>
+          <a href="https://wa.me/8801739703275" target="_blank" class="social-btn"><span class="s-icon">💬</span> WhatsApp <span class="s-arrow">↗</span></a>
         </div>
       </div>
-
     </div>
 
     <!-- RIGHT: Booking Calendar -->
     <div class="booking-card">
-
       <div class="booking-header">
         <h3>📅 Book a Call</h3>
         <p>30-minute discovery or collaboration call — pick a date & time below</p>
       </div>
-
-      <!-- Calendar -->
       <div class="cal-nav">
         <span class="cal-month" id="calMonth">March 2026</span>
         <div class="cal-arrows">
@@ -178,7 +110,6 @@
           <button class="cal-arrow-btn" id="nextMonth">›</button>
         </div>
       </div>
-
       <div class="cal-grid-wrap">
         <div class="cal-weekdays">
           <span>SUN</span><span>MON</span><span>TUE</span>
@@ -186,45 +117,37 @@
         </div>
         <div class="cal-days" id="calDays"></div>
       </div>
-
-      <!-- Time Slots -->
       <div class="slots-section" id="slotsSection" style="display:none">
         <div class="slots-title" id="slotsTitle">Available times</div>
         <div class="slots-grid" id="slotsGrid"></div>
       </div>
-
-      <!-- Confirm -->
       <div class="confirm-area" id="confirmArea">
         <div class="confirm-summary" id="confirmSummary"></div>
-        <input type="text" class="confirm-name-input" id="confirmName" placeholder="Your name & email (e.g. Alex · alex@email.com)">
+        <input type="text" class="confirm-name-input" id="confirmName"
+          placeholder="Your name & email (e.g. Alex · alex@email.com)">
         <button class="confirm-btn" id="confirmBtn">✦ Confirm Booking</button>
       </div>
-
-      <!-- Success -->
       <div class="booking-success" id="bookingSuccess">
         <div class="success-icon">🎉</div>
         <div class="success-title">You're booked!</div>
         <p class="success-sub" id="successMsg"></p>
         <button class="confirm-btn" style="width:100%;margin-top:8px" onclick="resetBooking()">Book another slot</button>
       </div>
-
     </div>
+
   </div>
 
-  <!-- RESPONSE NOTE -->
   <div class="response-note">
     ✦ <span>Average response time: 12 hours</span> · All timezones welcome
   </div>
 
   <!-- CONTACT FORM -->
   <div class="fcard">
-
     <div id="formWrap">
       <div class="fhead">
         <h2 class="ftitle">Drop me a <em>message</em></h2>
         <p class="fsub">Have a project in mind? Fill the form and I'll get back to you within 12 hours.</p>
       </div>
-
       <div class="fgrid">
         <div class="fg">
           <label class="flabel" for="fn">Your Name *</label>
@@ -252,54 +175,47 @@
         </div>
         <div class="fg full">
           <label class="flabel" for="fm">Message *</label>
-          <textarea class="ftextarea" id="fm" placeholder="Tell me about your project, goals, timeline, or anything else you'd like to share…" maxlength="1000"></textarea>
+          <textarea class="ftextarea" id="fm"
+            placeholder="Tell me about your project, goals, timeline, or anything else you'd like to share…"
+            maxlength="1000"></textarea>
           <span class="fcc" id="fcc">0 / 1000</span>
         </div>
       </div>
-
       <div class="ffooter">
         <p class="fnote">* Required fields · <span>Reply within 12 hrs</span></p>
         <button class="fsubmit" id="fsubmit" onclick="submitForm()">Send Message ✦</button>
       </div>
     </div>
-
-    <!-- Success -->
     <div class="fsuccess" id="formSuccess">
       <div class="fsuccess-icon">🎉</div>
       <h3>Message Sent!</h3>
-      <p id="fSuccessMsg">Thanks for reaching out! I'll reply within 12 hours. Looking forward to connecting.</p>
+      <p id="fSuccessMsg">Thanks for reaching out! I'll reply within 12 hours.</p>
       <button class="fres-btn" onclick="resetForm()">↺ Send another message</button>
     </div>
-
   </div>
 
-</div>
+</div><!-- end wrapper -->
 
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="./assets/fav-icon/K.png" alt="" width="52" height="52">
-      </div>
+      <div class="footer-logo"><img src="./assets/fav-icon/K.png" alt="" width="52" height="52"></div>
       <p class="footer-brand-desc">Independent designer crafting brand experiences & user-centred digital products.</p>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <a href="./works.html" class="footer-link">Works</a>
       <a href="#services" class="footer-link">Services</a>
-      <a href="./about.html" class="footer-link">about</a>
+      <a href="./about.html" class="footer-link">About</a>
       <a href="./blogs.html" class="footer-link">Blogs</a>
       <a href="./contact.html" class="footer-link">Contact</a>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Socials</div>
-      <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance </a>
-      <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble </a>
-      <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium </a>
+      <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance</a>
+      <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble</a>
+      <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium</a>
     </div>
-
     <div class="footer-col footer-newsletter">
       <div class="footer-col-title">Newsletter</div>
       <p class="footer-newsletter-desc">Receive design insights, exclusive updates and early access.</p>
@@ -310,192 +226,210 @@
       </div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <span>© 2026 Md Kamrul Hasan · All rights reserved · Made with ✦</span>
     <div class="footer-bottom-right">
-      <!-- <span class="footer-built">Md Kamrul Hasan</span> -->
-      <a href="https://www.facebook.com/kamrul21042/" target="_blank" class="footer-icon-link" title="facebook">ⓕ</a>
-      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank"  class="footer-icon-link" title="LinkedIn">[in]</a>
-      <a href="https://www.Instagram.com/kamrul21042/" target="_blank"  class="footer-icon-link" title="Instagram">🅾</a>
-      <a href="https://www.x.com/kamrul21042/" target="_blank"  class="footer-icon-link" title="Twitter">𝕏</a>
+      <a href="https://www.facebook.com/kamrul21042/" target="_blank" class="footer-icon-link">ⓕ</a>
+      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank" class="footer-icon-link">[in]</a>
+      <a href="https://www.Instagram.com/kamrul21042/" target="_blank" class="footer-icon-link">🅾</a>
+      <a href="https://www.x.com/kamrul21042/" target="_blank" class="footer-icon-link">𝕏</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // ── CALENDAR ──
-  const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-  const TIMES = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
-  const BOOKED = [2, 5, 9]; // booked slot indices (0-based)
+/* ══════════════════════════════════
+   CALENDAR
+══════════════════════════════════ */
+var MONTHS=['January','February','March','April','May','June',
+            'July','August','September','October','November','December'];
+var TIMES=['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM',
+           '2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'];
+var BOOKED=[2,5,9];
+var today=new Date();
+var viewDate=new Date(today.getFullYear(),today.getMonth(),1);
+var selectedDate=null, selectedSlot=null;
 
-  let today = new Date();
-  let viewDate = new Date(today.getFullYear(), today.getMonth(), 1);
-  let selectedDate = null;
-  let selectedSlot = null;
-
-  function renderCalendar() {
-    const year = viewDate.getFullYear();
-    const month = viewDate.getMonth();
-    document.getElementById('calMonth').textContent = `${MONTHS[month]} ${year}`;
-
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    const container = document.getElementById('calDays');
-    container.innerHTML = '';
-
-    // empty slots
-    for (let i = 0; i < firstDay; i++) {
-      const empty = document.createElement('div');
-      empty.className = 'cal-day empty';
-      container.appendChild(empty);
-    }
-
-    for (let d = 1; d <= daysInMonth; d++) {
-      const btn = document.createElement('div');
-      btn.className = 'cal-day';
-      btn.textContent = d;
-
-      const date = new Date(year, month, d);
-      const isPast = date < new Date(today.getFullYear(), today.getMonth(), today.getDate());
-      const isWeekend = date.getDay() === 0 || date.getDay() === 6;
-      const isToday = date.toDateString() === today.toDateString();
-
-      if (isPast || isWeekend) {
+function renderCalendar(){
+  var yr=viewDate.getFullYear(), mo=viewDate.getMonth();
+  document.getElementById('calMonth').textContent=MONTHS[mo]+' '+yr;
+  var first=new Date(yr,mo,1).getDay();
+  var days=new Date(yr,mo+1,0).getDate();
+  var con=document.getElementById('calDays');
+  con.innerHTML='';
+  for(var i=0;i<first;i++){
+    var e=document.createElement('div');e.className='cal-day empty';con.appendChild(e);
+  }
+  for(var d=1;d<=days;d++){
+    (function(day){
+      var btn=document.createElement('div');
+      btn.className='cal-day'; btn.textContent=day;
+      var date=new Date(yr,mo,day);
+      var past=date<new Date(today.getFullYear(),today.getMonth(),today.getDate());
+      var wknd=date.getDay()===0||date.getDay()===6;
+      var isT=date.toDateString()===today.toDateString();
+      if(past||wknd){
         btn.classList.add('disabled');
       } else {
         btn.classList.add('available');
-        if (isToday) btn.classList.add('today');
-        if (selectedDate && date.toDateString() === selectedDate.toDateString()) btn.classList.add('selected');
-
-        btn.addEventListener('click', () => {
-          selectedDate = date;
-          selectedSlot = null;
-          renderCalendar();
-          showSlots(date);
+        if(isT) btn.classList.add('today');
+        if(selectedDate&&date.toDateString()===selectedDate.toDateString()) btn.classList.add('selected');
+        btn.addEventListener('click',function(){
+          selectedDate=date; selectedSlot=null; renderCalendar(); showSlots(date);
         });
       }
+      con.appendChild(btn);
+    })(d);
+  }
+}
 
-      container.appendChild(btn);
+function showSlots(date){
+  document.getElementById('slotsSection').style.display='block';
+  document.getElementById('slotsTitle').textContent=
+    'Available times · '+date.toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'});
+  var grid=document.getElementById('slotsGrid');
+  grid.innerHTML='';
+  document.getElementById('confirmArea').classList.remove('show');
+  TIMES.forEach(function(t,i){
+    var btn=document.createElement('div');
+    btn.className='slot'; btn.textContent=t;
+    if(BOOKED.indexOf(i)!==-1){
+      btn.classList.add('booked'); btn.title='Already booked';
+    } else {
+      btn.addEventListener('click',function(){
+        document.querySelectorAll('.slot').forEach(function(s){s.classList.remove('selected');});
+        btn.classList.add('selected'); selectedSlot=t; showConfirm(date,t);
+      });
     }
-  }
+    grid.appendChild(btn);
+  });
+}
 
-  function showSlots(date) {
-    const section = document.getElementById('slotsSection');
-    const grid = document.getElementById('slotsGrid');
-    const title = document.getElementById('slotsTitle');
-    section.style.display = 'block';
-    title.textContent = `Available times · ${date.toLocaleDateString('en-US', {weekday:'long', month:'short', day:'numeric'})}`;
-    grid.innerHTML = '';
+function showConfirm(date,time){
+  var area=document.getElementById('confirmArea');
+  var ds=date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  document.getElementById('confirmSummary').innerHTML=
+    '<strong>📅 '+ds+'</strong><br>'+
+    '<strong>⏰ '+time+'</strong> · 30 min discovery call<br>'+
+    '<span style="color:var(--green);font-size:12px">✦ Confirmation will be sent to your email</span>';
+  area.classList.add('show');
+  area.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ── CONFIRM BOOKING → EmailJS দিয়ে আপনার কাছে mail আসবে ── */
+document.getElementById('confirmBtn').addEventListener('click',function(){
+  var nameInp=document.getElementById('confirmName');
+  var nameVal=nameInp.value.trim();
+
+  if(!nameVal){
+    nameInp.style.borderColor='rgba(239,68,68,0.5)';
+    nameInp.placeholder='⚠ Please enter your name & email';
+    return;
+  }
+  if(!selectedDate||!selectedSlot) return;
+
+  var btn=document.getElementById('confirmBtn');
+  btn.textContent='Sending…'; btn.disabled=true;
+
+  var ds=selectedDate.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+  var parts=nameVal.split(/[·|,]/).map(function(s){return s.trim();});
+  var sName=parts[0]||nameVal;
+  var sEmail=parts[1]||'Not provided';
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_BOOK_TEMPLATE, {
+    to_name:      'Kamrul',
+    from_name:    sName,
+    reply_to:     sEmail,
+    booking_date: ds,
+    booking_time: selectedSlot
+  })
+  .then(function(){
+    document.getElementById('successMsg').textContent=
+      'Your call is confirmed for '+ds+' at '+selectedSlot+'. See you then! 🙌';
     document.getElementById('confirmArea').classList.remove('show');
-
-    TIMES.forEach((t, i) => {
-      const btn = document.createElement('div');
-      btn.className = 'slot';
-      btn.textContent = t;
-      if (BOOKED.includes(i)) {
-        btn.classList.add('booked');
-        btn.title = 'Already booked';
-      } else {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
-          btn.classList.add('selected');
-          selectedSlot = t;
-          showConfirm(date, t);
-        });
-      }
-      grid.appendChild(btn);
-    });
-  }
-
-  function showConfirm(date, time) {
-    const area = document.getElementById('confirmArea');
-    const summary = document.getElementById('confirmSummary');
-    area.classList.add('show');
-    const dateStr = date.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
-    summary.innerHTML = `<strong>📅 ${dateStr}</strong><br><strong>⏰ ${time}</strong> · 30 min discovery call<br><span style="color:var(--green);font-size:12px">✦ Calendar invite will be sent to your email</span>`;
-    area.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  document.getElementById('confirmBtn').addEventListener('click', () => {
-    const name = document.getElementById('confirmName').value.trim();
-    if (!name) {
-      document.getElementById('confirmName').style.borderColor = 'rgba(239,68,68,0.5)';
-      document.getElementById('confirmName').placeholder = '⚠ Please enter your name & email';
-      return;
-    }
-    if (!selectedDate || !selectedSlot) return;
-
-    const dateStr = selectedDate.toLocaleDateString('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric'});
-    document.getElementById('successMsg').textContent = `Your call is confirmed for ${dateStr} at ${selectedSlot}. A calendar invite will be sent shortly — see you then! 🙌`;
-    document.getElementById('confirmArea').classList.remove('show');
-    document.getElementById('slotsSection').style.display = 'none';
+    document.getElementById('slotsSection').style.display='none';
     document.getElementById('bookingSuccess').classList.add('show');
+  })
+  .catch(function(err){
+    console.error('Booking error:',err);
+    btn.textContent='✦ Confirm Booking'; btn.disabled=false;
+    alert('সমস্যা হয়েছে। সরাসরি email করুন: hello@creativekamrul.com');
   });
+});
 
-  function resetBooking() {
-    selectedDate = null;
-    selectedSlot = null;
-    document.getElementById('bookingSuccess').classList.remove('show');
-    document.getElementById('slotsSection').style.display = 'none';
-    document.getElementById('confirmArea').classList.remove('show');
-    document.getElementById('confirmName').value = '';
-    renderCalendar();
-  }
-
-  document.getElementById('prevMonth').addEventListener('click', () => {
-    viewDate.setMonth(viewDate.getMonth() - 1);
-    renderCalendar();
-  });
-  document.getElementById('nextMonth').addEventListener('click', () => {
-    viewDate.setMonth(viewDate.getMonth() + 1);
-    renderCalendar();
-  });
-
+function resetBooking(){
+  selectedDate=null; selectedSlot=null;
+  document.getElementById('bookingSuccess').classList.remove('show');
+  document.getElementById('slotsSection').style.display='none';
+  document.getElementById('confirmArea').classList.remove('show');
+  document.getElementById('confirmName').value='';
+  document.getElementById('confirmBtn').textContent='✦ Confirm Booking';
+  document.getElementById('confirmBtn').disabled=false;
   renderCalendar();
+}
 
-  // ── CONTACT FORM ──
+document.getElementById('prevMonth').addEventListener('click',function(){
+  viewDate.setMonth(viewDate.getMonth()-1); renderCalendar();
+});
+document.getElementById('nextMonth').addEventListener('click',function(){
+  viewDate.setMonth(viewDate.getMonth()+1); renderCalendar();
+});
+
+renderCalendar();
+
+/* ══════════════════════════════════
+   CONTACT FORM → EmailJS দিয়ে আপনার কাছে mail আসবে
+══════════════════════════════════ */
 document.getElementById('fm').addEventListener('input',function(){
   document.getElementById('fcc').textContent=this.value.length+' / 1000';
 });
 
 function submitForm(){
-  var name=document.getElementById('fn').value.trim();
-  var email=document.getElementById('fe').value.trim();
-  var subject=document.getElementById('fs').value.trim();
-  var msg=document.getElementById('fm').value.trim();
-  var type=document.getElementById('ft').value;
-  var valid=true;
+  var name    = document.getElementById('fn').value.trim();
+  var email   = document.getElementById('fe').value.trim();
+  var subject = document.getElementById('fs').value.trim();
+  var msg     = document.getElementById('fm').value.trim();
+  var type    = document.getElementById('ft').value;
+  var valid   = true;
 
-  ['fn','fe','fs','fm'].forEach(function(id){document.getElementById(id).classList.remove('err');});
+  ['fn','fe','fs','fm'].forEach(function(id){
+    document.getElementById(id).classList.remove('err');
+  });
 
-  if(!name){document.getElementById('fn').classList.add('err');valid=false;}
-  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){document.getElementById('fe').classList.add('err');valid=false;}
-  if(!subject){document.getElementById('fs').classList.add('err');valid=false;}
-  if(!msg){document.getElementById('fm').classList.add('err');valid=false;}
-  if(!valid)return;
+  if(!name)    { document.getElementById('fn').classList.add('err'); valid=false; }
+  if(!email||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+               { document.getElementById('fe').classList.add('err'); valid=false; }
+  if(!subject) { document.getElementById('fs').classList.add('err'); valid=false; }
+  if(!msg)     { document.getElementById('fm').classList.add('err'); valid=false; }
+  if(!valid) return;
 
   var btn=document.getElementById('fsubmit');
-  btn.textContent='Sending…';btn.disabled=true;
+  btn.textContent='Sending…'; btn.disabled=true;
 
-  emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_FORM_TEMPLATE,{
-    from_name:name,reply_to:email,
-    subject:subject,project_type:type||'Not specified',message:msg
-  }).then(function(){
-    document.getElementById('fSuccessMsg').textContent='Thanks '+name.split(' ')[0]+'! I got your message and will reply within 12 hours. Talk soon!';
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_FORM_TEMPLATE, {
+    to_name:      'Kamrul',
+    from_name:    name,
+    reply_to:     email,
+    subject:      subject,
+    project_type: type||'Not specified',
+    message:      msg
+  })
+  .then(function(){
+    document.getElementById('fSuccessMsg').textContent=
+      'Thanks '+name.split(' ')[0]+'! I got your message and will reply within 12 hours. Talk soon!';
     document.getElementById('formWrap').style.display='none';
     document.getElementById('formSuccess').classList.add('show');
-  }).catch(function(){
-    btn.textContent='Send Message ✦';btn.disabled=false;
-    alert('Something went wrong. Please email directly at hello@creativekamrul.com');
+  })
+  .catch(function(err){
+    console.error('Form error:',err);
+    btn.textContent='Send Message ✦'; btn.disabled=false;
+    alert('সমস্যা হয়েছে। সরাসরি email করুন: hello@creativekamrul.com');
   });
 }
 
 function resetForm(){
   ['fn','fe','fs','fm'].forEach(function(id){
-    var el=document.getElementById(id);
-    el.value='';el.classList.remove('err');
+    var el=document.getElementById(id); el.value=''; el.classList.remove('err');
   });
   document.getElementById('ft').value='';
   document.getElementById('fcc').textContent='0 / 1000';
