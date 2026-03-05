@@ -125,6 +125,7 @@
 
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
@@ -138,16 +139,16 @@
       <div class="footer-col-title">Company</div>
       <a href="./works.html" class="footer-link">Works</a>
       <a href="#services" class="footer-link">Services</a>
-      <a href="./about.html" class="footer-link">about</a>
+      <a href="./about.html" class="footer-link">About</a>
       <a href="./blogs.html" class="footer-link">Blogs</a>
       <a href="./contact.html" class="footer-link">Contact</a>
     </div>
 
     <div class="footer-col">
       <div class="footer-col-title">Socials</div>
-      <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance </a>
-      <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble </a>
-      <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium </a>
+      <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance</a>
+      <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble</a>
+      <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium</a>
     </div>
 
     <div class="footer-col footer-newsletter">
@@ -155,20 +156,21 @@
       <p class="footer-newsletter-desc">Receive design insights, exclusive updates and early access.</p>
       <div class="footer-input-wrap">
         <span class="footer-input-icon">@</span>
-        <input type="email" placeholder="Enter your email..." class="footer-input">
-        <button class="footer-send-btn" aria-label="Subscribe">→</button>
+        <input type="email" id="newsletter-email" placeholder="Enter your email..." class="footer-input">
+        <button class="footer-send-btn" id="newsletter-btn" aria-label="Subscribe" onclick="subscribeNewsletter()">→</button>
       </div>
+      <div id="newsletter-msg" style="font-size:12px;margin-top:8px;display:none"></div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <span>© 2026 Md Kamrul Hasan · All rights reserved · Made with ✦</span>
+    <a href="https://old.creativekamrul.com/" target="_blank" style="color: var(--accent); text-decoration: none;">My Old Site</a>
     <div class="footer-bottom-right">
-      <!-- <span class="footer-built">Md Kamrul Hasan</span> -->
       <a href="https://www.facebook.com/kamrul21042/" target="_blank" class="footer-icon-link" title="facebook">ⓕ</a>
-      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank"  class="footer-icon-link" title="LinkedIn">[in]</a>
-      <a href="https://www.Instagram.com/kamrul21042/" target="_blank"  class="footer-icon-link" title="Instagram">🅾</a>
-      <a href="https://www.x.com/kamrul21042/" target="_blank"  class="footer-icon-link" title="Twitter">𝕏</a>
+      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank" class="footer-icon-link" title="LinkedIn">[in]</a>
+      <a href="https://www.Instagram.com/kamrul21042/" target="_blank" class="footer-icon-link" title="Instagram">🅾</a>
+      <a href="https://www.x.com/kamrul21042/" target="_blank" class="footer-icon-link" title="Twitter">𝕏</a>
     </div>
   </div>
 </footer>
@@ -214,6 +216,97 @@
     searchQuery = e.target.value.trim();
     filterCards();
   });
+</script>
+
+<!-- ── Newsletter — Web3Forms ── -->
+<script>
+function subscribeNewsletter() {
+  var input   = document.getElementById('newsletter-email');
+  var btn     = document.getElementById('newsletter-btn');
+  var msgDiv  = document.getElementById('newsletter-msg');
+  var email   = input.value.trim();
+
+  /* Validation */
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = 'rgba(239,68,68,0.6)';
+    msgDiv.style.display    = 'block';
+    msgDiv.style.color      = '#f87171';
+    msgDiv.textContent      = '⚠ Please enter a valid email address.';
+    setTimeout(function() {
+      input.style.borderColor = '';
+      msgDiv.style.display    = 'none';
+    }, 3000);
+    return;
+  }
+
+  /* Loading */
+  btn.textContent  = '…';
+  btn.disabled     = true;
+  input.disabled   = true;
+  msgDiv.style.display = 'none';
+  input.style.borderColor = '';
+
+  /* Web3Forms API */
+  fetch('https://api.web3forms.com/submit', {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      access_key: '0ace6903-fbb8-44cf-b396-d9fb36d3e1dd',
+      subject:    '📧 New Newsletter Subscriber — Creative Kamrul',
+      from_name:  'Newsletter',
+      email:      email,
+      message:    'New subscriber: ' + email + '\nTime: ' + new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' })
+    })
+  })
+  .then(function(res) { return res.json(); })
+  .then(function(data) {
+    if (data.success) {
+      /* ✅ Success */
+      input.value             = '';
+      input.disabled          = false;
+      btn.textContent         = '✓';
+      btn.style.background    = '#4ade80';
+      btn.style.color         = '#07100e';
+      msgDiv.style.display    = 'block';
+      msgDiv.style.color      = '#4ade80';
+      msgDiv.textContent      = '✅ Subscribed! Thank you.';
+      setTimeout(function() {
+        btn.textContent      = '→';
+        btn.style.background = '';
+        btn.style.color      = '';
+        btn.disabled         = false;
+        msgDiv.style.display = 'none';
+      }, 4000);
+    } else {
+      throw new Error(data.message || 'Submission failed');
+    }
+  })
+  .catch(function(err) {
+    console.error('Newsletter error:', err);
+    /* ❌ Error */
+    input.disabled          = false;
+    btn.textContent         = '!';
+    btn.style.background    = 'rgba(239,68,68,0.85)';
+    btn.style.color         = '#fff';
+    input.style.borderColor = 'rgba(239,68,68,0.6)';
+    msgDiv.style.display    = 'block';
+    msgDiv.style.color      = '#f87171';
+    msgDiv.textContent      = '❌ Something went wrong. Please try again.';
+    setTimeout(function() {
+      btn.textContent         = '→';
+      btn.style.background    = '';
+      btn.style.color         = '';
+      btn.disabled            = false;
+      input.style.borderColor = '';
+      msgDiv.style.display    = 'none';
+    }, 4000);
+  });
+}
+
+/* Enter key দিয়েও submit হবে */
+document.getElementById('newsletter-email').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') subscribeNewsletter();
+});
 </script>
 </body>
 </html>
