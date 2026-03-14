@@ -1,49 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ceative Kamrul</title>
 <meta content="Graphics & Ui Ux Designer" name="description">
 <meta content="creative Kamrul" name="Ui UX Designer Kamrul Hasan">
-
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_outward" />
-
-<!--Links-->
 <link rel="stylesheet" href="works.css">
 <link rel="stylesheet" href="style.css">
-
-<!-- Favicons -->
 <link href="./assets/fav-icon/K.png" rel="icon">
 <link href="./assets/fav-icon/K.png" rel="apple-touch-icon">
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;s1.src='https://embed.tawk.to/67c7f20a02283919190169e9/1ilkqlqkn';
+  s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
+</script>
 
- <!--Start of Tawk.to Script-->
-    <script type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/67c7f20a02283919190169e9/1ilkqlqkn';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
-      </script>
-      <!--End of Tawk.to Script-->
+<style>
+/* ── Case Study Popup ── */
+.cs-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.88);
+  backdrop-filter: blur(10px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s ease;
+}
+.cs-overlay.open { opacity: 1; pointer-events: all; }
 
+.cs-modal {
+  background: #0d1f17;
+  border: 1px solid rgba(74,222,128,0.2);
+  border-radius: 24px;
+  width: 100%; max-width: 800px;
+  max-height: 90vh; overflow-y: auto;
+  padding: 36px;
+  position: relative;
+  transform: translateY(32px) scale(0.97);
+  transition: transform .38s cubic-bezier(.34,1.56,.64,1);
+}
+.cs-overlay.open .cs-modal { transform: translateY(0) scale(1); }
+.cs-modal::-webkit-scrollbar { width: 4px; }
+.cs-modal::-webkit-scrollbar-thumb { background: rgba(74,222,128,0.3); border-radius: 4px; }
+
+.cs-close {
+  position: absolute; top: 14px; right: 14px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  color: #e5f0e8; font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s; line-height: 1;
+}
+.cs-close:hover { background: rgba(239,68,68,0.25); border-color: rgba(239,68,68,0.4); }
+
+.cs-header { margin-bottom: 22px; }
+.cs-meta { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #4ade80; margin-bottom: 8px; }
+.cs-title { font-family: 'Playfair Display', serif; font-size: clamp(20px,3vw,28px); font-weight: 900; color: #e5f0e8; margin-bottom: 10px; line-height: 1.2; }
+.cs-desc { font-size: 14px; color: rgba(229,240,232,0.55); line-height: 1.75; }
+
+.cs-gallery { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.cs-img-wrap {
+  flex: 1; position: relative; border-radius: 16px; overflow: hidden;
+  background: #0a1612; border: 1px solid rgba(74,222,128,0.12);
+  aspect-ratio: auto;
+}
+.cs-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .22s ease; }
+.cs-img.fade { opacity: 0; }
+.cs-img-counter {
+  position: absolute; bottom: 10px; right: 12px;
+  background: rgba(0,0,0,0.65); color: #e5f0e8;
+  font-size: 11px; font-weight: 600; padding: 3px 10px;
+  border-radius: 999px; backdrop-filter: blur(4px);
+}
+.cs-prev, .cs-next {
+  width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  color: #e5f0e8; font-size: 22px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s; user-select: none;
+}
+.cs-prev:hover, .cs-next:hover { background: rgba(74,222,128,0.12); border-color: rgba(74,222,128,0.3); color: #4ade80; }
+.cs-prev:disabled, .cs-next:disabled { opacity: .2; cursor: default; }
+
+.cs-dots { display: flex; justify-content: center; gap: 7px; margin-bottom: 22px; }
+.cs-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.15); cursor: pointer; transition: all .25s; }
+.cs-dot.active { background: #4ade80; width: 22px; border-radius: 999px; }
+
+.cs-links { display: flex; gap: 12px; flex-wrap: wrap; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.07); }
+.cs-link { display: inline-flex; align-items: center; gap: 7px; padding: 10px 22px; border-radius: 999px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all .2s; }
+.cs-link-primary { background: #4ade80; color: #07100e; }
+.cs-link-primary:hover { background: #22c55e; }
+.cs-link-outline { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: #e5f0e8; }
+.cs-link-outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
+.cs-hint { width: 100%; text-align: center; font-size: 11px; color: rgba(229,240,232,0.22); margin-top: 10px; }
+</style>
 </head>
 <body>
- <!-- Fun Zone Button --> 
-<a href="fun-zone.html" class="game-btn">
-  <span class="btn-icon">🎮</span>
-</a>
 
-<!-- NAV -->
+<a href="fun-zone.html" class="game-btn"><span class="btn-icon">🎮</span></a>
+
 <nav>
   <a href="./index.html">Home</a>
   <a href="./works.html" class="active">Works</a>
@@ -54,44 +114,28 @@
 
 <div class="wrapper">
 
-  <!-- BREADCRUMB -->
   <div class="breadcrumb">
     <a href="./index.html">Home</a>
     <span class="breadcrumb-sep">›</span>
     <span class="breadcrumb-current">All Works</span>
   </div>
 
-  <!-- HEADING -->
   <div class="page-heading">
     <div class="page-tag">Curated Work</div>
     <h1 class="page-title">All <em>Case Studies</em><br>& Projects</h1>
     <p class="page-subtitle">A complete collection of my work across brand identity, UX research, and product design.</p>
   </div>
 
-  <!-- STATS ROW -->
   <div class="stats-row">
-    <div class="stat-item">
-      <div class="stat-num">8<span>+</span></div>
-      <div class="stat-label">Total Projects</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">20<span>+</span></div><div class="stat-label">Total Projects</div></div>
     <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">6<span>+</span></div>
-      <div class="stat-label">Happy Clients</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">6<span>+</span></div><div class="stat-label">Happy Clients</div></div>
     <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">4<span>+</span></div>
-      <div class="stat-label">Years Experience</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">4<span>+</span></div><div class="stat-label">Years Experience</div></div>
     <div class="stat-divider"></div>
-    <div class="stat-item">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Categories</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Categories</div></div>
   </div>
 
-  <!-- SEARCH + FILTERS -->
   <div class="controls">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
@@ -105,17 +149,12 @@
     </div>
   </div>
 
-  <!-- RESULTS COUNT -->
-  <div class="results-count" id="resultsCount">Showing <strong>8</strong> projects</div>
+  <div class="results-count" id="resultsCount">Showing <strong>20</strong> projects</div>
 
-  <!-- WORKS LIST -->
   <div class="works-list" id="worksList">
 
     <!-- 1 -->
-    <div class="case-card"
-      data-category="mobile"
-      data-title="ambufast mobile application emergency ambulance service bangladesh safecare medical"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="mobile" data-title="ambufast mobile application emergency ambulance service bangladesh safecare medical" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Ambufast Mobile Application · 2026 <span class="case-category-tag">Mobile Application</span></div>
         <h3 class="case-title">Emergency Ambulance Service Bangladesh</h3>
@@ -124,21 +163,18 @@
           <li><span class="check">✓</span> Immediate Pilot Connection.</li>
           <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/245356451/AmbuFast-Mobile-Applications" target="_blank" class="case-btn">View Case Study</a>
           <a href="https://play.google.com/store/apps/developer?id=SafeCare24/7+Medical+Services+Limited&hl=en" target="_blank" class="case-btn">Apps Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
       </div>
       <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
-        <img src="./assets/portfolio/apps.png" alt="Ambufast Mobile App" class="case-mockup-img" />
+        <img src="./assets/portfolio/apps.png" alt="Ambufast Mobile" class="case-mockup-img" />
       </div>
     </div>
 
     <!-- 2 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="ambufast web application emergency ambulance service bangladesh booking tracking"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="ambufast web application emergency ambulance service bangladesh booking tracking" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Ambufast Web Application · 2025 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">Emergency Ambulance Service Bangladesh</h3>
@@ -147,30 +183,27 @@
           <li><span class="check">✓</span> Immediate Pilot Connection.</li>
           <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/220540417/AmfuFast-The-Largest-Ambulance-Providing-Platform" target="_blank" class="case-btn">View Case Study</a>
           <a href="https://play.google.com/store/apps/developer?id=SafeCare24/7+Medical+Services+Limited&hl=en" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
       </div>
       <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
-        <img src="./assets/portfolio/ambufast.webp" alt="Ambufast Web App" class="case-mockup-img" />
+        <img src="./assets/portfolio/ambufast.webp" alt="Ambufast Web" class="case-mockup-img" />
       </div>
     </div>
 
     <!-- 3 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="skillboost elearning coding test platform education learning web application"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="skillboost elearning coding test platform education learning web application" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Skillboost · 2025 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">E-learning & Coding test platform</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Interactive coding challenges.</li>
+          <li><span class="check">✓</span> Real-time test evaluation.</li>
+          <li><span class="check">✓</span> Skill-based learning paths.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/211147943/Skillboost-E-learning-Coding-test-platform" target="_blank" class="case-btn">View Case Study</a>
           <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -181,19 +214,16 @@
     </div>
 
     <!-- 4 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="stockpilot warehouse management system inventory stock web application"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="stockpilot warehouse management system inventory stock web application" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Stockpilot · 2025 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">Warehouse Management System</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Smart inventory tracking.</li>
+          <li><span class="check">✓</span> Real-time stock alerts.</li>
+          <li><span class="check">✓</span> Multi-warehouse support.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/205935113/Stockpilot-Warehouse-Management-System" target="_blank" class="case-btn">View Case Study</a>
           <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -204,19 +234,16 @@
     </div>
 
     <!-- 5 -->
-    <div class="case-card"
-      data-category="mobile"
-      data-title="dokani account management system mobile application shop store"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="mobile" data-title="dokani account management system mobile application shop store" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Dokani · 2025 <span class="case-category-tag">Mobile Application</span></div>
         <h3 class="case-title">Account Management System</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Easy expense tracking.</li>
+          <li><span class="check">✓</span> Daily sales reports.</li>
+          <li><span class="check">✓</span> Multi-account support.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/205427551/Dokani-Account-Manager" target="_blank" class="case-btn">View Case Study</a>
           <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -227,19 +254,16 @@
     </div>
 
     <!-- 6 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="js green media ltd making world livable environment sustainability web"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="js green media ltd making world livable environment sustainability web" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">JS Green Media LTD · 2025 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">Making The World Livable</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Sustainable landscape design.</li>
+          <li><span class="check">✓</span> Eco-friendly solutions.</li>
+          <li><span class="check">✓</span> Community-focused green spaces.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/204196567/JS-Geen-Media-LTD-Landscaping-Landing-page" target="_blank" class="case-btn">View Case Study</a>
           <a href="https://jsgreenmedialtd.com/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -250,19 +274,16 @@
     </div>
 
     <!-- 7 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="shopswiftly ecommerce multi vendor system online shopping web application"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="shopswiftly ecommerce multi vendor system online shopping web application" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">ShopSwiftly · 2024 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">E-commerce Multi Vendor system</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Multi-vendor marketplace.</li>
+          <li><span class="check">✓</span> Seamless checkout flow.</li>
+          <li><span class="check">✓</span> Seller dashboard & analytics.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/197782443/ShopSwiftly-E-commerce-website" target="_blank" class="case-btn">View Case Study</a>
           <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -273,19 +294,16 @@
     </div>
 
     <!-- 8 -->
-    <div class="case-card"
-      data-category="web"
-      data-title="ride sharing driving bangladesh earn money uber cab transport web application"
-      style="animation-delay:.15s">
+    <div class="case-card" data-category="web" data-title="ride sharing driving bangladesh earn money uber cab transport web application" style="animation-delay:.15s">
       <div class="case-info">
         <div class="case-meta">Ride Sharing · 2024 <span class="case-category-tag">Web Application</span></div>
         <h3 class="case-title">Earn Money by Driving or Get a Ride Now | Bangladesh</h3>
         <ul class="case-stats">
-          <li><span class="check">✓</span> Instant Emergency Booking.</li>
-          <li><span class="check">✓</span> Immediate Pilot Connection.</li>
-          <li><span class="check">✓</span> Live Tracking & Safe Arrival.</li>
+          <li><span class="check">✓</span> Instant ride booking.</li>
+          <li><span class="check">✓</span> Driver & passenger app.</li>
+          <li><span class="check">✓</span> Live route tracking.</li>
         </ul>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
           <a href="https://www.behance.net/gallery/197615435/Ride-Sharing-Mobile-App-UI" target="_blank" class="case-btn">View Case Study</a>
           <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
         </div>
@@ -295,32 +313,266 @@
       </div>
     </div>
 
+    <!-- 9 -->
+    <div class="case-card" data-category="web" data-title="dg print24 printing online ecommerce web application" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Dg print24 · 2023 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Print with ease, anywhere, anytime</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Online printing saves you money and time, print with ease, anywhere any time.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.behance.net/gallery/200048491/DG-Print-24-E-commerce-Website" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://dgprint24.com/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/DGprint24.webp" alt="DG Print24" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="case-card" data-category="web" data-title="rpc limo car rental luxury transport services web application" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Rpc Limo · 2023 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Car Rental Services</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> RPC Limo boasts a diverse and meticulously maintained fleet of top-tier vehicles, ensuring the epitome of luxury and comfort.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.behance.net/gallery/195474555/RPC-LIMO-WEBSITE-REDESIGN" target="_blank" class="case-btn">View Case Study</a>
+          <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/Rpc Limo.webp" alt="RPC Limo" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="case-card" data-category="web" data-title="pkhsa association management system web application" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Pkhsa · 2023 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Association Management System</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Pkhsa provides a comprehensive solution for managing association operations.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://pkhsa.vercel.app/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/PKHSSA_Cover.webp" alt="Pkhsa" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="case-card" data-category="web" data-title="tech analytica limited software company website web application" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Tech Analytica Limited · 2022 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Software company website</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://techanalyticaltd.com/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/Tal.webp" alt="Tech Analytica" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="case-card" data-category="mobile" data-title="timecraft task management mobile app productivity" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">TimeCraft · 2022 <span class="case-category-tag">Mobile Application</span></div>
+        <h3 class="case-title">Task Management Mobile App</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.behance.net/gallery/197620499/TimeCraft-l-Task-Management-Mobile-App" target="_blank" class="case-btn">View Case Study</a>
+          <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/TaskManagement.webp" alt="TimeCraft" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="case-card" data-category="mobile" data-title="ride sharing driver mobile app bangladesh transport" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Ride Sharing · 2023 <span class="case-category-tag">Mobile Application</span></div>
+        <h3 class="case-title">Ride Sharing Mobile App</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.behance.net/gallery/197615741/Ride-Sharing-l-Driver-Mobile-App-Ui" target="_blank" class="case-btn">View Case Study</a>
+          <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/Rent Driver.webp" alt="Ride Sharing Mobile" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="case-card" data-category="mobile" data-title="doctortime doctor appointment mobile app healthcare" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">DoctorTime · 2022 <span class="case-category-tag">Mobile Application</span></div>
+        <h3 class="case-title">DoctorTime Mobile App</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="https://www.behance.net/gallery/182444753/DoctorTime" target="_blank" class="case-btn">View Case Study</a>
+          <a href="#" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/DoctorTime.webp" alt="DoctorTime" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="case-card" data-category="web" data-title="analytica rtc online video platform web application" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Analytica RTC · 2022 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Analytica RTC Online Video Platform</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://analyticartc.framer.website/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/AnalyticaRTC.webp" alt="Analytica RTC" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="case-card" data-category="web" data-title="appeler video calling mobile application web" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Appeler · 2022 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Video Calling Mobile Application</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://play.google.com/store/apps/details?id=bd.tal.calling.appeler" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/Appeler.webp" alt="Appeler" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="case-card" data-category="mobile" data-title="mind school elearning mobile application education" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Mind School · 2022 <span class="case-category-tag">Mobile Application</span></div>
+        <h3 class="case-title">Elearning Mobile Application</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://play.google.com/store/apps/details?id=com.tal.mindschool.mind_school" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/Mind-school.webp" alt="Mind School Mobile" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 19 -->
+    <div class="case-card" data-category="web" data-title="mind school elearning web application education" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Mind School · 2022 <span class="case-category-tag">Web Application</span></div>
+        <h3 class="case-title">Elearning Web Application</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span> Technology That Makes Life Better.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" target="_blank" class="case-btn">View Case Study</a>
+          <a href="https://mindschoolbd.com/" target="_blank" class="case-btn">Live Link <span class="material-symbols-outlined">arrow_outward</span></a>
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/mindschool-website-cover.webp" alt="Mind School Web" class="case-mockup-img" />
+      </div>
+    </div>
+
+    <!-- 20 ── POPUP CASE STUDY ── -->
+    <div class="case-card" data-category="design" data-title="mind school elearning web application education platform" style="animation-delay:.15s">
+      <div class="case-info">
+        <div class="case-meta">Visual Design · 2016-2026 <span class="case-category-tag">Graphics</span></div>
+        <h3 class="case-title">Visual Design is where creativity meets clarity.</h3>
+        <ul class="case-stats">
+          <li><span class="check">✓</span>Visual design is the art of crafting engaging digital experiences through thoughtful use of color, typography, imagery, and layout to communicate ideas clearly and beautifully. School is a comprehensive e-learning platform designed to make quality education accessible to everyone. The platform focuses on interactive learning experiences with a clean, intuitive interface.</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <!-- এই button এ click করলে popup খুলবে -->
+          <a href="#" class="case-btn" onclick="openCaseStudy('visual', event)">View All Design</a>
+          
+        </div>
+      </div>
+      <div class="case-visual" style="background:linear-gradient(135deg,#1a1a2a,#2a1a3a)">
+        <img src="./assets/portfolio/visual.webp" alt="Mind School" class="case-mockup-img" />
+      </div>
+    </div>
+
   </div>
 
-  <!-- NO RESULTS -->
   <div class="no-results" id="noResults">
     <div class="no-results-icon">🔍</div>
     <h3>No projects found</h3>
     <p>Try a different search or filter.</p>
   </div>
 
-  <!-- BACK -->
   <div class="back-to-home">
-    <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="./index.html" class="back-btn">← Back to Home</a>
   </div>
 
+</div>
+
+<!-- ══ CASE STUDY POPUP MODAL ══ -->
+<div class="cs-overlay" id="csOverlay" onclick="csOverlayClick(event)">
+  <div class="cs-modal">
+    <button class="cs-close" onclick="closeCaseStudy()">✕</button>
+    <div class="cs-header">
+      <div class="cs-meta"  id="csMeta"></div>
+      <h2 class="cs-title" id="csTitle"></h2>
+      <p class="cs-desc"   id="csDesc"></p>
+    </div>
+    <div class="cs-gallery">
+      <button class="cs-prev" id="csPrev" onclick="csNav(-1)">‹</button>
+      <div class="cs-img-wrap">
+        <img class="cs-img" id="csImg" src="" alt="">
+        <div class="cs-img-counter" id="csCounter">1 / 1</div>
+      </div>
+      <button class="cs-next" id="csNext" onclick="csNav(1)">›</button>
+    </div>
+    <div class="cs-dots"  id="csDots"></div>
+    <div class="cs-links" id="csLinks"></div>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="./assets/fav-icon/K.png" alt="" width="52" height="52">
-      </div>
+      <div class="footer-logo"><img src="./assets/fav-icon/K.png" alt="" width="52" height="52"></div>
       <p class="footer-brand-desc">Independent designer crafting brand experiences & user-centred digital products.</p>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <a href="./works.html" class="footer-link">Works</a>
@@ -329,14 +581,12 @@
       <a href="./blogs.html" class="footer-link">Blogs</a>
       <a href="./contact.html" class="footer-link">Contact</a>
     </div>
-
     <div class="footer-col">
       <div class="footer-col-title">Socials</div>
       <a href="https://www.behance.com/kamrul21042/" target="_blank" class="footer-link">Behance</a>
       <a href="https://www.dribbble.com/kamrul21042/" target="_blank" class="footer-link">Dribbble</a>
       <a href="https://medium.com/@kamrul21042" target="_blank" class="footer-link">Medium</a>
     </div>
-
     <div class="footer-col footer-newsletter">
       <div class="footer-col-title">Newsletter</div>
       <p class="footer-newsletter-desc">Receive design insights, exclusive updates and early access.</p>
@@ -348,93 +598,204 @@
       <div id="newsletter-msg" style="font-size:12px;margin-top:8px;display:none"></div>
     </div>
   </div>
-
   <div class="footer-bottom">
     <span>© 2026 Md Kamrul Hasan · All rights reserved · Made with ✦</span>
-    <a href="https://old.creativekamrul.com/" target="_blank" style="color: var(--accent); text-decoration: none;">My Old Site</a>
+    <a href="https://old.creativekamrul.com/" target="_blank" style="color:var(--accent);text-decoration:none;">My Old Site</a>
     <div class="footer-bottom-right">
-      <a href="https://www.facebook.com/kamrul21042/" target="_blank" class="footer-icon-link" title="facebook">ⓕ</a>
-      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank" class="footer-icon-link" title="LinkedIn">[in]</a>
-      <a href="https://www.Instagram.com/kamrul21042/" target="_blank" class="footer-icon-link" title="Instagram">🅾</a>
-      <a href="https://www.x.com/kamrul21042/" target="_blank" class="footer-icon-link" title="Twitter">𝕏</a>
+      <a href="https://www.facebook.com/kamrul21042/" target="_blank" class="footer-icon-link">ⓕ</a>
+      <a href="https://www.linkedin.com/in/kamrul21042/" target="_blank" class="footer-icon-link">[in]</a>
+      <a href="https://www.Instagram.com/kamrul21042/" target="_blank" class="footer-icon-link">🅾</a>
+      <a href="https://www.x.com/kamrul21042/" target="_blank" class="footer-icon-link">𝕏</a>
     </div>
   </div>
 </footer>
 
+<!-- ══ SCRIPTS ══ -->
 <script>
-  var cards = document.querySelectorAll('.case-card');
-  var searchInput = document.getElementById('searchInput');
-  var filterChips = document.querySelectorAll('.chip[data-filter]');
-  var resultsCount = document.getElementById('resultsCount');
-  var noResults = document.getElementById('noResults');
+/* ── Search & Filter ── */
+var cards       = document.querySelectorAll('.case-card');
+var searchInput = document.getElementById('searchInput');
+var filterChips = document.querySelectorAll('.chip[data-filter]');
+var resultsCount= document.getElementById('resultsCount');
+var noResults   = document.getElementById('noResults');
+var activeFilter= 'all', searchQuery = '';
 
-  var activeFilter = 'all';
-  var searchQuery = '';
-
-  function filterCards() {
-    var visible = 0;
-    cards.forEach(function(card) {
-      var cat = card.dataset.category;
-      var title = card.dataset.title; // already lowercase keywords
-      var matchFilter = activeFilter === 'all' || cat === activeFilter;
-      var matchSearch = searchQuery === '' || title.indexOf(searchQuery) !== -1;
-      if (matchFilter && matchSearch) {
-        card.classList.remove('hidden');
-        visible++;
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-    resultsCount.innerHTML = 'Showing <strong>' + visible + '</strong> project' + (visible !== 1 ? 's' : '');
-    noResults.classList.toggle('show', visible === 0);
-  }
-
-  filterChips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
-      filterChips.forEach(function(c) { c.classList.remove('active'); });
-      chip.classList.add('active');
-      activeFilter = chip.dataset.filter;
-      filterCards();
-    });
+function filterCards() {
+  var visible = 0;
+  cards.forEach(function(card) {
+    var matchFilter = activeFilter === 'all' || card.dataset.category === activeFilter;
+    var matchSearch = searchQuery === '' || card.dataset.title.indexOf(searchQuery) !== -1;
+    if (matchFilter && matchSearch) { card.classList.remove('hidden'); visible++; }
+    else card.classList.add('hidden');
   });
-
-  searchInput.addEventListener('input', function(e) {
-    searchQuery = e.target.value.trim().toLowerCase();
+  resultsCount.innerHTML = 'Showing <strong>' + visible + '</strong> project' + (visible !== 1 ? 's' : '');
+  noResults.classList.toggle('show', visible === 0);
+}
+filterChips.forEach(function(chip) {
+  chip.addEventListener('click', function() {
+    filterChips.forEach(function(c) { c.classList.remove('active'); });
+    chip.classList.add('active');
+    activeFilter = chip.dataset.filter;
     filterCards();
   });
+});
+searchInput.addEventListener('input', function(e) {
+  searchQuery = e.target.value.trim().toLowerCase();
+  filterCards();
+});
 </script>
 
-<!-- ── Newsletter — Web3Forms ── -->
+<!-- ── Case Study Popup ── -->
+<script>
+/* ══ DATA — এখানে images যোগ করুন ══ */
+var CS_DATA = {
+
+  'visual': {
+    meta:  'Visual Design · 2016-2026 · Graphics',
+    title: 'Visual Design is where creativity meets clarity.',
+    desc:  'Visual design is the art of crafting engaging digital experiences through thoughtful use of color, typography, imagery, and layout to communicate ideas clearly and beautifully. School is a comprehensive e-learning platform designed to make quality education accessible to everyone. The platform focuses on interactive learning experiences with a clean, intuitive interface.',
+    images: [
+      './assets/portfolio/ARC.webp',
+      './assets/portfolio/C-1.webp',
+      './assets/portfolio/C-2.webp',
+      './assets/portfolio/C-3.webp',
+      './assets/portfolio/Visiting-card-1.webp',
+      './assets/portfolio/L-1.webp',
+      './assets/portfolio/L-2.webp',
+      './assets/portfolio/L-3.webp',
+      './assets/portfolio/L-4.webp',
+      './assets/portfolio/DDDDD.webp',
+      './assets/portfolio/Ayykori.webp',
+      './assets/portfolio/Next0.webp',
+      './assets/portfolio/Women.webp',
+      './assets/portfolio/Father-day.webp',
+      './assets/portfolio/21-feb.webp',
+      './assets/portfolio/21-3.webp',
+      './assets/portfolio/21-2.webp',
+      './assets/portfolio/16Dec.webp',
+      './assets/portfolio/Friend.webp',
+      './assets/portfolio/F-1.webp',
+      './assets/portfolio/F-2.webp',
+    ],
+    links: [
+      // { label: 'Live Link ↗', href: 'https://mindschoolbd.com/', primary: true }
+    ]
+  }
+
+};
+
+/* ── State ── */
+var csData  = null;
+var csIndex = 0;
+
+/* ── Open ── */
+function openCaseStudy(id, e) {
+  if (e) e.preventDefault();
+  csData = CS_DATA[id];
+  if (!csData) return;
+  csIndex = 0;
+
+  document.getElementById('csMeta').textContent  = csData.meta;
+  document.getElementById('csTitle').textContent = csData.title;
+  document.getElementById('csDesc').textContent  = csData.desc;
+
+  buildCsDots();
+  buildCsLinks();
+  csSetImg(0);
+
+  document.getElementById('csOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+/* ── Close ── */
+function closeCaseStudy() {
+  document.getElementById('csOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function csOverlayClick(e) {
+  if (e.target === document.getElementById('csOverlay')) closeCaseStudy();
+}
+
+/* ── Navigate ── */
+function csNav(dir) {
+  if (!csData) return;
+  csIndex = (csIndex + dir + csData.images.length) % csData.images.length;
+  csSetImg(csIndex);
+}
+
+/* ── Set image ── */
+function csSetImg(idx) {
+  var img = document.getElementById('csImg');
+  img.classList.add('fade');
+  setTimeout(function() {
+    img.src = csData.images[idx];
+    img.classList.remove('fade');
+  }, 200);
+  document.getElementById('csCounter').textContent = (idx + 1) + ' / ' + csData.images.length;
+  document.querySelectorAll('.cs-dot').forEach(function(d, i) {
+    d.classList.toggle('active', i === idx);
+  });
+}
+
+/* ── Build dots ── */
+function buildCsDots() {
+  var wrap = document.getElementById('csDots');
+  wrap.innerHTML = '';
+  csData.images.forEach(function(_, i) {
+    var d = document.createElement('div');
+    d.className = 'cs-dot' + (i === 0 ? ' active' : '');
+    d.onclick = (function(idx) { return function() { csIndex = idx; csSetImg(idx); }; })(i);
+    wrap.appendChild(d);
+  });
+}
+
+/* ── Build links ── */
+function buildCsLinks() {
+  var wrap = document.getElementById('csLinks');
+  wrap.innerHTML = '';
+  csData.links.forEach(function(l) {
+    var a = document.createElement('a');
+    a.href = l.href; a.target = '_blank';
+    a.textContent = l.label;
+    a.className = 'cs-link ' + (l.primary ? 'cs-link-primary' : 'cs-link-outline');
+    wrap.appendChild(a);
+  });
+  var hint = document.createElement('p');
+  hint.className = 'cs-hint';
+  hint.textContent = '← → arrow keys to navigate · ESC to close';
+  wrap.appendChild(hint);
+}
+
+/* ── Keyboard ── */
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('csOverlay').classList.contains('open')) return;
+  if (e.key === 'ArrowRight') csNav(1);
+  if (e.key === 'ArrowLeft')  csNav(-1);
+  if (e.key === 'Escape')     closeCaseStudy();
+});
+</script>
+
+<!-- ── Newsletter ── -->
 <script>
 function subscribeNewsletter() {
-  var input   = document.getElementById('newsletter-email');
-  var btn     = document.getElementById('newsletter-btn');
-  var msgDiv  = document.getElementById('newsletter-msg');
-  var email   = input.value.trim();
+  var input  = document.getElementById('newsletter-email');
+  var btn    = document.getElementById('newsletter-btn');
+  var msgDiv = document.getElementById('newsletter-msg');
+  var email  = input.value.trim();
 
-  /* Validation */
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     input.style.borderColor = 'rgba(239,68,68,0.6)';
-    msgDiv.style.display    = 'block';
-    msgDiv.style.color      = '#f87171';
-    msgDiv.textContent      = '⚠ Please enter a valid email address.';
-    setTimeout(function() {
-      input.style.borderColor = '';
-      msgDiv.style.display    = 'none';
-    }, 3000);
+    msgDiv.style.display = 'block'; msgDiv.style.color = '#f87171';
+    msgDiv.textContent = '⚠ Please enter a valid email address.';
+    setTimeout(function() { input.style.borderColor=''; msgDiv.style.display='none'; }, 3000);
     return;
   }
 
-  /* Loading */
-  btn.textContent  = '…';
-  btn.disabled     = true;
-  input.disabled   = true;
-  msgDiv.style.display = 'none';
-  input.style.borderColor = '';
+  btn.textContent = '…'; btn.disabled = true; input.disabled = true;
+  msgDiv.style.display = 'none'; input.style.borderColor = '';
 
-  /* Web3Forms API */
   fetch('https://api.web3forms.com/submit', {
-    method:  'POST',
+    method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
       access_key: '0ace6903-fbb8-44cf-b396-d9fb36d3e1dd',
@@ -444,55 +805,34 @@ function subscribeNewsletter() {
       message:    'New subscriber: ' + email + '\nTime: ' + new Date().toLocaleString('en-BD', { timeZone: 'Asia/Dhaka' })
     })
   })
-  .then(function(res) { return res.json(); })
+  .then(function(r) { return r.json(); })
   .then(function(data) {
     if (data.success) {
-      /* ✅ Success */
-      input.value             = '';
-      input.disabled          = false;
-      btn.textContent         = '✓';
-      btn.style.background    = '#4ade80';
-      btn.style.color         = '#07100e';
-      msgDiv.style.display    = 'block';
-      msgDiv.style.color      = '#4ade80';
-      msgDiv.textContent      = '✅ Subscribed! Thank you.';
+      input.value = ''; input.disabled = false;
+      btn.textContent = '✓'; btn.style.background = '#4ade80'; btn.style.color = '#07100e';
+      msgDiv.style.display = 'block'; msgDiv.style.color = '#4ade80';
+      msgDiv.textContent = '✅ Subscribed! Thank you.';
       setTimeout(function() {
-        btn.textContent      = '→';
-        btn.style.background = '';
-        btn.style.color      = '';
-        btn.disabled         = false;
-        msgDiv.style.display = 'none';
+        btn.textContent='→'; btn.style.background=''; btn.style.color=''; btn.disabled=false; msgDiv.style.display='none';
       }, 4000);
-    } else {
-      throw new Error(data.message || 'Submission failed');
-    }
+    } else { throw new Error(); }
   })
-  .catch(function(err) {
-    console.error('Newsletter error:', err);
-    /* ❌ Error */
-    input.disabled          = false;
-    btn.textContent         = '!';
-    btn.style.background    = 'rgba(239,68,68,0.85)';
-    btn.style.color         = '#fff';
+  .catch(function() {
+    input.disabled = false;
+    btn.textContent = '!'; btn.style.background = 'rgba(239,68,68,0.85)'; btn.style.color = '#fff';
     input.style.borderColor = 'rgba(239,68,68,0.6)';
-    msgDiv.style.display    = 'block';
-    msgDiv.style.color      = '#f87171';
-    msgDiv.textContent      = '❌ Something went wrong. Please try again.';
+    msgDiv.style.display = 'block'; msgDiv.style.color = '#f87171';
+    msgDiv.textContent = '❌ Something went wrong. Please try again.';
     setTimeout(function() {
-      btn.textContent         = '→';
-      btn.style.background    = '';
-      btn.style.color         = '';
-      btn.disabled            = false;
-      input.style.borderColor = '';
-      msgDiv.style.display    = 'none';
+      btn.textContent='→'; btn.style.background=''; btn.style.color=''; btn.disabled=false;
+      input.style.borderColor=''; msgDiv.style.display='none';
     }, 4000);
   });
 }
-
-/* Enter key */
 document.getElementById('newsletter-email').addEventListener('keydown', function(e) {
   if (e.key === 'Enter') subscribeNewsletter();
 });
 </script>
+
 </body>
 </html>
